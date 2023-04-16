@@ -47,6 +47,8 @@ import WidgetBot from '../images/others/widgetbot.png';
 import WinSCP from '../images/others/win-scp.png';
 import Windows11 from '../images/others/windows11.png';
 import WSATools from '../images/others/wsa-tools.png';
+import Tauri from '../images/others/tauri.png';
+import MeiliSearch from '../images/others/meilisearch.png';
 
 export default function Others(): JSX.Element {
 	return (
@@ -149,6 +151,24 @@ export default function Others(): JSX.Element {
 						website="https://github.com/features/copilot"
 						title="GitHub Copilot"
 						description="GitHub Copilot is an AI-powered code completion tool that helps you write code faster."
+					/>
+					<Card
+						image={Tauri}
+						imageText="Tauri"
+						website="https://tauri.app/"
+						discord="https://discord.com/invite/tauri"
+						github="https://github.com/tauri-apps/tauri"
+						title="Tauri"
+						description="Tauri is a framework for building cross-platform desktop applications with web technologies and Rust."
+					/>
+					<Card
+						image={MeiliSearch}
+						imageText="MeiliSearch"
+						website='https://www.meilisearch.com/'
+						discord="https://discord.com/invite/meilisearch"
+						github="https://github.com/meilisearch/meilisearch"
+						title="MeiliSearch"
+						description="MeiliSearch is a powerful, fast, open-source, easy to use and deploy search engine."
 					/>
 					<Card
 						image={Discordjs}
