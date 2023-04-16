@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Sen&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	body {
+		@apply font-[Sen] text-[#DCDFE4];
+	}
+
+	::-webkit-scrollbar {
+		@apply w-4;
+	}
+
+	::-webkit-scrollbar-track,
+	::-webkit-scrollbar-corner {
+		@apply bg-base-300;
+	}
+
+	::-webkit-scrollbar-thumb {
+		@apply rounded-full border-2 border-slate-700 bg-slate-700;
+	}
+
+	::-webkit-scrollbar-thumb:hover {
+		@apply border-solid bg-primary;
+	}
+
+	::-webkit-scrollbar-button:single-button {
+		@apply block h-4 w-4 border-solid border-base-300;
+	}
+
+	::-webkit-scrollbar-button:vertical:decrement {
+		border-width: 0 8px 8px 8px;
+		border-color: transparent transparent #bbbbbb transparent;
+	}
+
+	::-webkit-scrollbar-button:vertical:decrement:hover {
+		border-color: transparent transparent #ffffff transparent;
+	}
+
+	::-webkit-scrollbar-button:vertical:increment {
+		border-width: 8px 8px 0 8px;
+		border-color: #bbbbbb transparent transparent transparent;
+	}
+
+	::-webkit-scrollbar-button:vertical:increment:hover {
+		border-color: #ffffff transparent transparent transparent;
+	}
+
+	::-webkit-scrollbar-button:horizontal:decrement {
+		border-width: 8px 8px 8px 0;
+		border-color: transparent #bbbbbb transparent transparent;
+	}
+
+	::-webkit-scrollbar-button:horizontal:decrement:hover {
+		border-color: transparent #ffffff transparent transparent;
+	}
+
+	::-webkit-scrollbar-button:horizontal:increment {
+		border-width: 8px 0 8px 8px;
+		border-color: transparent transparent transparent #bbbbbb;
+	}
+
+	::-webkit-scrollbar-button:horizontal:increment:hover {
+		border-color: transparent transparent transparent #ffffff;
+	}
+}
+
+@layer components {
+	.card-grid-template {
+		grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+	}
+
+	.menu :where(li:not(.disabled)) > :where(*:not(ul)) {
+		@apply active:bg-primary-focus;
+		transition-property: inherit;
+		transition-duration: inherit;
+		transition-timing-function: inherit;
+	}
+
+	.spinner::before {
+		animation: 1.5s cubic-bezier(0.4, 0.7, 0.9, 0.3) infinite spinner;
+		animation-play-state: inherit;
+		border: solid 4px #cfd0d1;
+		border-bottom-color: hsl(var(--p));
+		border-radius: 50%;
+		content: '';
+		height: 30px;
+		width: 30px;
+		position: absolute;
+	}
+
+	@keyframes spinner {
+		0% {
+			transform: translate(-50%, -50%) rotate(0deg);
+		}
+		100% {
+			transform: translate(-50%, -50%) rotate(360deg);
+		}
+	}
+}
+
+@layer utilities {
+	.-translate-x-new-half {
+		translate: -50%;
+	}
+}

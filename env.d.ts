@@ -1,0 +1,10 @@
+namespace NodeJS {
+	interface ProcessEnv {
+		NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY: string;
+		STRIPE_SECRET_KEY: string;
+		NEXT_PUBLIC_PAYMENT_REDIRECT_URL: string;
+		STRIPE_WEBHOOK_ENDPOINT_SECRET: string;
+		ERROR_LOGGER_WEBHOOK: string;
+		STRIPE_PAYMENT_WEBHOOK: string;
+	}
+}
