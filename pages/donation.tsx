@@ -4,7 +4,6 @@ import Description from 'components/Description';
 import Title from 'components/Title';
 import CheckoutForm from 'components/donation/CheckoutForm';
 import { AnimatePresence, motion, useAnimate } from 'framer-motion';
-import { GetStaticProps } from 'next';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useCallback, useEffect, useRef, useState } from 'react';
@@ -15,31 +14,29 @@ import { default as currencies } from '../libs/currencies.json';
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY);
 let currentPopup: NodeJS.Timeout | undefined;
 
-export const getStaticProps: GetStaticProps = async () => {
-	const userCurrencies = await fetch('https://ipapi.co/json/')
-		.then((res) => res.json())
-		.then((data) => {
-			if (currencies.includes(data?.currency.toLowerCase())) return data.currency.toLowerCase();
-			return 'usd';
-		})
-		.catch(() => 'usd');
-
-	return {
-		props: { currencies, userCurrencies },
-	};
-};
-
-export default function Donation({ currencies, userCurrencies }: { currencies: string[]; userCurrencies: string }) {
+export default function Donation() {
 	const [donateLoading, setDonateLoading] = useState(false);
 	const [amountEnabled, setAmountEnabled] = useState(true);
 	const [donateEnabled, setDonateEnabled] = useState(true);
 	const [paymentText, setPaymentText] = useState<'Donate' | 'Back'>('Donate');
-	const [clientSecret, setClientSecret] = useState<string | undefined>();
+	const [clientSecret, setClientSecret] = useState<string>();
+	const [userCurrency, setUserCurrency] = useState<string>();
 	const [error, setError] = useState<{ message: string; isClient: boolean; success: boolean } | undefined>();
 	const amount = useRef<HTMLInputElement>(null);
 	const currency = useRef<HTMLSelectElement>(null);
 	const [popupElement, animateErrorElement] = useAnimate();
 	const router = useRouter();
+
+	useEffect(() => {
+		fetch('https://ipapi.co/json/')
+			.then((res) => res.json())
+			.then((data) => {
+				if (currencies.map((o) => o.currency).includes(data?.currency.toLowerCase()))
+					return setUserCurrency(data.currency.toLowerCase());
+				setUserCurrency('usd');
+			})
+			.catch(() => setUserCurrency('usd'));
+	}, []);
 
 	const options: StripeElementsOptions = {
 		clientSecret,
@@ -107,7 +104,7 @@ export default function Donation({ currencies, userCurrencies }: { currencies: s
 				method: 'POST',
 				headers: { 'Content-Type': 'application/json' },
 				body: JSON.stringify({
-					amount: parseInt(amount.current?.value || ''),
+					amount: parseFloat(amount.current?.value || ''),
 					currency: currency.current?.value,
 				}),
 			})
@@ -221,14 +218,14 @@ export default function Donation({ currencies, userCurrencies }: { currencies: s
 							defaultValue="10"
 							className="input input-bordered input-primary border-r-0 rounded-r-none w-full"
 							onInput={(event) => {
-								const matched = event.currentTarget.value.match(/\d{1,6}\.(\d{0,2})?|\d{1,6}/);
+								const matched = event.currentTarget.value.match(/[1-9]\d{0,5}\.(\d{0,2})?|[1-9]\d{0,5}|0\.\d{0,2}|0/);
 								if (!matched) {
 									event.currentTarget.value = '';
 									setDonateEnabled(false);
 									return;
 								}
 								event.currentTarget.value = matched[0];
-								if (event.currentTarget.value.match(/^(\d{0,5}[^\.]|\d{1,6}\.\d{1,2})$/)) setDonateEnabled(true);
+								if (event.currentTarget.value.match(/^([1-9]\d{0,5}|\d{1,6}\.\d{1,2})$/)) setDonateEnabled(true);
 								else setDonateEnabled(false);
 							}}
 							disabled={amountEnabled ? false : true}
@@ -239,17 +236,19 @@ export default function Donation({ currencies, userCurrencies }: { currencies: s
 								(!amountEnabled ? ' border-none bg-[#262b36] cursor-not-allowed' : '')
 							}
 						/>
-						<select
-							title="Currency"
-							ref={currency}
-							className="select max-w-xs input-primary border-l-0 rounded-l-none focus:border-l-0 focus:outline focus:outline-2 focus:outline-primary focus:outline-offset-2 uppercase"
-							disabled={amountEnabled ? false : true}
-							defaultValue={userCurrencies}
-						>
-							{currencies.map((currency, index) => (
-								<option key={index}>{currency}</option>
-							))}
-						</select>
+						{userCurrency && (
+							<select
+								title="Currency"
+								ref={currency}
+								className="select max-w-xs input-primary border-l-0 rounded-l-none focus:border-l-0 focus:outline focus:outline-2 focus:outline-primary focus:outline-offset-2 uppercase"
+								disabled={amountEnabled ? false : true}
+								defaultValue={userCurrency}
+							>
+								{currencies.map((currency, index) => (
+									<option key={index}>{currency.currency}</option>
+								))}
+							</select>
+						)}
 					</div>
 					<button
 						className={

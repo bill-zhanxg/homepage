@@ -1,4 +1,4 @@
-export default function handleServerError(error: { message: string; stack?: string }) {
+export default function handleServerError(error: { message?: string; stack?: string }) {
 	console.error(error);
 
 	// Send error via Webhook

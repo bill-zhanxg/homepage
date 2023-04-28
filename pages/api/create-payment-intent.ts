@@ -6,6 +6,7 @@ import handleServerError from '../../libs/handleServerError';
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
 	apiVersion: '2022-11-15',
+	typescript: true,
 });
 
 function formatAmount(amount: any) {
@@ -16,10 +17,13 @@ function formatAmount(amount: any) {
 	return amount * 100;
 }
 
-function checkCurrency(currency: any) {
+function checkCurrency(currency: any, amount: number) {
 	if (currency === undefined) return new Error('Currency can not be undefined');
 	if (typeof currency !== 'string') return new Error('Currency can only be a string');
-	if (!currencies.includes(currency)) return new Error('Currency is not supported');
+	const currencyObject = currencies.find((o) => o.currency === currency);
+	if (!currencyObject) return new Error('Currency is not supported');
+	if (amount / 100 < currencyObject.minimum)
+		return new Error(`Minimum amount for this currency is ${currencyObject.minimum}`);
 	return currency;
 }
 
@@ -33,9 +37,10 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
 		const { amount, currency } = req.body;
 
 		const cleanedAmount = formatAmount(amount);
-		const cleanedCurrency = checkCurrency(currency);
 		if (cleanedAmount instanceof Error) return resolve() && res.status(400).send({ message: cleanedAmount.message });
-		if (cleanedCurrency instanceof Error) return resolve() && res.status(400).send({ message: cleanedCurrency.message });
+		const cleanedCurrency = checkCurrency(currency, cleanedAmount);
+		if (cleanedCurrency instanceof Error)
+			return resolve() && res.status(400).send({ message: cleanedCurrency.message });
 
 		stripe.paymentIntents
 			.create({
@@ -52,7 +57,8 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
 				});
 				resolve();
 			})
-			.catch((err: Error) => {
+			.catch((err: Stripe.StripeRawError) => {
+				if (err.code === 'parameter_invalid_integer') return res.status(400).send({ message: err.message });
 				res.status(500).send({ message: err.message });
 				handleServerError(err);
 				resolve();
