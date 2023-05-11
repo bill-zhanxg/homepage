@@ -44,6 +44,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 			const event = stripe.webhooks.constructEvent(body, sig, process.env.STRIPE_WEBHOOK_ENDPOINT_SECRET);
 
 			switch (event.type) {
+				// TODO: I think it might be checkout.session.async_payment_succeeded
 				case 'charge.succeeded':
 					const chargeSucceeded = event.data.object as {
 						amount?: number;
