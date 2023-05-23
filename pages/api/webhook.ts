@@ -121,7 +121,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 			return;
 		} catch (err: any) {
 			handleServerError(err);
-			res.status(400).send(`Webhook Error: ${err.message}`);
+			res.status(400).send(`Webhook Error: ${encodeURI(err.message)}`);
 			return;
 		}
 	}

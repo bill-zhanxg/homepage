@@ -22,10 +22,12 @@ import ElectronJS from '../images/others/electronjs.png';
 import ElevenClock from '../images/others/eleven-clock.png';
 import FFmpeg from '../images/others/ffmpeg.png';
 import FileConverter from '../images/others/file-converter.png';
+import FluentUI from '../images/others/fluentui.png';
 import FramerMotion from '../images/others/framer-motion.png';
 import GitHubCopilot from '../images/others/github-copilot.png';
 import Hash from '../images/others/hash.png';
 import IconViewer from '../images/others/icon-viewer.jpg';
+import MeiliSearch from '../images/others/meilisearch.png';
 import MicrosoftBing from '../images/others/ms-bing.png';
 import MicrosoftEdge from '../images/others/ms-edge.jpg';
 import Nextjs from '../images/others/nextjs.png';
@@ -35,6 +37,7 @@ import Pterodactyl from '../images/others/pterodactyl.png';
 import ReVanced from '../images/others/revanced.png';
 import Rufus from '../images/others/rufus.png';
 import TailWindCss from '../images/others/tailwindcss.png';
+import Tauri from '../images/others/tauri.png';
 import TreeSize from '../images/others/tree-size.png';
 import Tweaking from '../images/others/tweaking.png';
 import Typescript from '../images/others/typescript.png';
@@ -46,9 +49,8 @@ import WebRTC from '../images/others/webrtc.png';
 import WidgetBot from '../images/others/widgetbot.png';
 import WinSCP from '../images/others/win-scp.png';
 import Windows11 from '../images/others/windows11.png';
+import WinUI from '../images/others/winui.png';
 import WSATools from '../images/others/wsa-tools.png';
-import Tauri from '../images/others/tauri.png';
-import MeiliSearch from '../images/others/meilisearch.png';
 
 export default function Others(): JSX.Element {
 	return (
@@ -153,6 +155,22 @@ export default function Others(): JSX.Element {
 						description="GitHub Copilot is an AI-powered code completion tool that helps you write code faster."
 					/>
 					<Card
+						image={WinUI}
+						imageText="WinUI"
+						website="https://microsoft.github.io/microsoft-ui-xaml/"
+						github="https://github.com/microsoft/microsoft-ui-xaml"
+						title="WinUI"
+						description="The Windows UI Library (WinUI) is a native user experience (UX) framework for both Windows desktop and UWP applications."
+					/>
+					<Card
+						image={FluentUI}
+						imageText="Fluent UI"
+						website="https://developer.microsoft.com/en-us/fluentui/"
+						github="https://github.com/microsoft/fluentui"
+						title="Fluent UI"
+						description="Fluent UI is an ecosystem that helps to create consistent user experience across all platforms. It is an open source project from Microsoft."
+					/>
+					<Card
 						image={Tauri}
 						imageText="Tauri"
 						website="https://tauri.app/"
@@ -164,7 +182,7 @@ export default function Others(): JSX.Element {
 					<Card
 						image={MeiliSearch}
 						imageText="MeiliSearch"
-						website='https://www.meilisearch.com/'
+						website="https://www.meilisearch.com/"
 						discord="https://discord.com/invite/meilisearch"
 						github="https://github.com/meilisearch/meilisearch"
 						title="MeiliSearch"

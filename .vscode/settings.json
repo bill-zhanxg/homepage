@@ -6,6 +6,7 @@
         "Crossplay",
         "electronjs",
         "Fireboy",
+        "fluentui",
         "Hastebin",
         "Livfac",
         "Meili",
@@ -19,6 +20,7 @@
         "Watergirl",
         "Webmin",
         "webrtc",
-        "widgetbot"
+        "widgetbot",
+        "winui"
     ]
 }

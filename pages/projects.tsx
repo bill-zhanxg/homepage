@@ -15,6 +15,7 @@ import Livfac from '../images/projects/livfac.png';
 import Malware from '../images/projects/malware.png';
 import MCPECracker from '../images/projects/mcpe-cracker.jpg';
 import NetballCalculator from '../images/projects/netball-calculator.jpg';
+import OneDriveSyncAnywhere from '../images/projects/onedrive-sync-anywhere.png';
 import OnlineStorageSystem from '../images/projects/online-storage-system.png';
 import Pi from '../images/projects/pi.png';
 import Pong from '../images/projects/pong.jpg';
@@ -43,6 +44,14 @@ export default function Projects(): JSX.Element {
 						github="https://github.com/bill-zhanxg/homepage"
 						title="My Homepage"
 						description="This is the page you're currently viewing. It is built with Next.js, Tailwind CSS and Daisy UI."
+					/>
+					<Card
+						image={OneDriveSyncAnywhere}
+						imageText="OneDrive Sync Anywhere"
+						isNew
+						github="https://github.com/bill-zhanxg/onedrive-sync-anywhere"
+						title="OneDrive Sync Anywhere"
+						description="This app allows the user to sync files outside the OneDrive folder by creating a Directory Junction."
 					/>
 					<Card
 						image={RemoteCrossplay}

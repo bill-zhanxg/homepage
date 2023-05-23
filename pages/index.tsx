@@ -1,10 +1,11 @@
 import { motion } from 'framer-motion';
-import Image from 'next/image';
 import { useState } from 'react';
 import { FaMicrosoft } from 'react-icons/fa';
 
 import Title from 'components/Title';
+import Link from 'next/link';
 import Description from '../components/Description';
+import HomeImage from '../components/home/HomeImage';
 import Paragraph from '../components/home/Paragraph';
 import Paragraph1 from '../components/home/Paragraph1';
 import Paragraph2 from '../components/home/Paragraph2';
@@ -14,7 +15,6 @@ import Discord from '../images/home/discord.jpg';
 import Piano from '../images/home/piano.jpg';
 import Unity from '../images/home/unity.jpg';
 import Win11Wallpaper from '../images/home/win11-wallpaper.jpg';
-import HomeImage from '../components/home/HomeImage';
 
 export default function Home(): JSX.Element {
 	const [isAnimating, setIsAnimating] = useState(true);
@@ -35,8 +35,8 @@ export default function Home(): JSX.Element {
 				<Title>Hi there, I&apos;m Bill Zhang</Title>
 				<Description>
 					Full stack developer, Discord bot developer, App developer, Minecraft Plugin & Mod developer, Game developer,
-					Server developer. I am known online as <b>Bill.IHCha</b>, <b>Bill.zhanxg</b>, <b>Bill-zhanxg</b>. People usually just
-					call me <b>Bill</b>.
+					Server developer. I am known online as <b>Bill.IHCha</b>, <b>Bill.zhanxg</b>, <b>Bill-zhanxg</b>. People
+					usually just call me <b>Bill</b>.
 				</Description>
 			</div>
 			<Paragraph>
@@ -46,9 +46,28 @@ export default function Home(): JSX.Element {
 						<p>• 🌐 I&apos;m currently live in Australia</p>
 						<p>• 💻 I&apos;m a student that like to code</p>
 						<p className="flex gap-2">
-							• <FaMicrosoft className="pt-1" /> Love the New Microsoft Design
+							• <FaMicrosoft className="pt-1" />
+							<span>
+								Love the new Microsoft design &#40;
+								<Link
+									href="https://microsoft.github.io/microsoft-ui-xaml/"
+									target="_blank"
+									className="link link-primary"
+								>
+									WinUI
+								</Link>{' '}
+								/{' '}
+								<Link
+									href="https://developer.microsoft.com/en-us/fluentui/"
+									target="_blank"
+									className="link link-primary"
+								>
+									Fluent UI
+								</Link>
+								&#41;
+							</span>
 						</p>
-						<p>• 🎨 I can code stuffs, but suck at designing :&#40;</p>
+						<p>• 🎨 I can code stuffs, but not good at designing :&#40;</p>
 						<p>
 							• 📘 Good at math <span className="font-sans">&#58;&#68;</span>
 						</p>
@@ -65,6 +84,7 @@ export default function Home(): JSX.Element {
 					<div className="pl-6">
 						<p>• Typescript</p>
 						<p>• Javascript</p>
+						<p>• Rust</p>
 						<p>• Java</p>
 						<p>• C#</p>
 						<p>• C++ &#40;Used it, hated it, but want to learn it better&#41;</p>
@@ -79,6 +99,7 @@ export default function Home(): JSX.Element {
 						<p>• React</p>
 						<p>• Next.js</p>
 						<p>• Electron</p>
+						<p>• Tauri</p>
 						<p>• Unity</p>
 						<p>• Minecraft Java Plugin / Mod</p>
 						<p>• Minecraft Bedrock Behavior Pack</p>
@@ -104,7 +125,7 @@ export default function Home(): JSX.Element {
 						<p>• 🎹 Piano Grade 8</p>
 						<p>• 🗄️ IT, Server Management</p>
 						<p>• 📐 Problem Solver</p>
-						<p>• 🎨 Suck at designing / Colors</p>
+						<p>• 🎨 Learning designing / Colors</p>
 						<p>• 🅰 English = uhhhh...</p>
 						<p>• 📘 Nerd</p>
 					</div>

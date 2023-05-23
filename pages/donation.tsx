@@ -78,12 +78,14 @@ export default function Donation() {
 					{
 						duration: 0.3,
 					},
-				).then(() => {
-					if (localPopup === currentPopup) {
-						setError(undefined);
-						currentPopup = undefined;
-					}
-				});
+				)
+					.then(() => {
+						if (localPopup === currentPopup) {
+							setError(undefined);
+							currentPopup = undefined;
+						}
+					})
+					.catch(() => {});
 			}, 3000);
 
 			currentPopup = localPopup;
@@ -139,30 +141,38 @@ export default function Donation() {
 
 	useEffect(() => {
 		const clientSecret = new URLSearchParams(window.location.search).get('payment_intent_client_secret');
-		stripePromise.then((stripe) => {
-			if (!stripe || !clientSecret) return;
+		stripePromise
+			.then((stripe) => {
+				if (!stripe || !clientSecret) return;
 
-			stripe.retrievePaymentIntent(clientSecret).then(({ paymentIntent }) => {
-				if (paymentIntent !== undefined) {
-					switch (paymentIntent.status) {
-						case 'succeeded':
-							showPopup('Your payment was successful!', false, true);
-							break;
-						case 'processing':
-							showPopup('Your payment is being processed.', false, true);
-							break;
-						case 'requires_payment_method':
-							showPopup('Your payment was not successful, please try again.', false);
-							break;
-						default:
-							showPopup(`Something went wrong, please try again. Status: ${paymentIntent.status}`, false);
-							break;
-					}
-				}
+				stripe
+					.retrievePaymentIntent(clientSecret)
+					.then(({ paymentIntent }) => {
+						if (paymentIntent !== undefined) {
+							switch (paymentIntent.status) {
+								case 'succeeded':
+									showPopup('Your payment was successful!', false, true);
+									break;
+								case 'processing':
+									showPopup('Your payment is being processed.', false, true);
+									break;
+								case 'requires_payment_method':
+									showPopup('Your payment was not successful, please try again.', false);
+									break;
+								default:
+									showPopup(`Something went wrong, please try again. Status: ${paymentIntent.status}`, false);
+									break;
+							}
+						}
+					})
+					.catch(() => showPopup('Something went wrong, please try again.', false));
+
+				router.replace('/donation', undefined, { shallow: true });
+			})
+			.catch(() => {
+				showPopup('Something went wrong, please try again.', false);
+				router.replace('/donation', undefined, { shallow: true });
 			});
-
-			router.replace('/donation', undefined, { shallow: true });
-		});
 	}, [showPopup, router]);
 
 	return (

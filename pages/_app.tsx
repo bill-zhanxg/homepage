@@ -138,7 +138,7 @@ export default function App({ Component, pageProps }: AppProps): JSX.Element {
 									</div>
 								</motion.div>
 							</motion.div>
-							<NavBarItem hideNavBar={hideNavBar} router={router} url="/home" text="Home" />
+							<NavBarItem hideNavBar={hideNavBar} router={router} url="/" text="Home" />
 							<NavBarItem hideNavBar={hideNavBar} router={router} url="/projects" text="My Projects" />
 							<NavBarItem hideNavBar={hideNavBar} router={router} url="/others" text="Cool Stuffs" />
 							<NavBarItem hideNavBar={hideNavBar} router={router} url="/discord" text="Discord" />
