@@ -57,7 +57,7 @@ export default function Projects(): JSX.Element {
 						image={RemoteCrossplay}
 						imageText="Remote Crossplay"
 						isNew
-						github="https://github.com/bill-zhanxg/Remote-Crossplay"
+						github="https://github.com/bill-zhanxg/remote-crossplay"
 						title="Remote Crossplay"
 						description="This application enables users to engage in a single-device game on multiple devices simultaneously."
 					/>
@@ -65,7 +65,7 @@ export default function Projects(): JSX.Element {
 						image={StartUpProgramControl}
 						imageText="Startup Program Control"
 						youtube="https://youtu.be/cLb3fYf2NUc"
-						github="https://github.com/bill-zhanxg/Startup-Program-Control"
+						github="https://github.com/bill-zhanxg/startup-program-control"
 						title="Startup Program Control"
 						description="This program allows you to manage all your startup files, including Windows Services, Task Scheduler, Windows context menu, and more. You can also add a file to startup with ease."
 					/>
@@ -73,7 +73,7 @@ export default function Projects(): JSX.Element {
 						image={OnlineStorageSystem}
 						imageText="Online Storage System"
 						website="https://storage.bill-zhanxg.com/"
-						github="https://github.com/bill-zhanxg/Online-Storage-System"
+						github="https://github.com/bill-zhanxg/online-storage-system"
 						title="Online Storage System"
 						description="This website is designed solely for my Think Project, and it allows you to store files on the cloud. It is not recommended for actual use, but you can learn from the source code instead."
 					/>
@@ -81,28 +81,28 @@ export default function Projects(): JSX.Element {
 						image={GetAdmin}
 						imageText="GetAdmin"
 						youtube="https://youtu.be/Ci2bh2hdgsI"
-						github="https://github.com/bill-zhanxg/GetAdmin"
+						github="https://github.com/bill-zhanxg/automatic-windows-admin"
 						title="GetAdmin"
 						description="This program enables you to gain administrator privileges without needing knowledge of commands. Please use it solely for educational purposes. Note that it only works on Windows 10."
 					/>
 					<Card
 						image={Pi}
 						imageText="Pi"
-						github="https://github.com/bill-zhanxg/Pi-downloader"
+						github="https://github.com/bill-zhanxg/pi-downloader"
 						title="Pi Downloader"
 						description="A super fast pi downloader uses the 100 trillion digit of pi API from Google to download pi"
 					/>
 					<Card
 						image={NetballCalculator}
 						imageText="Netball Calculator"
-						github="https://github.com/bill-zhanxg/Netball-Calculator"
+						github="https://github.com/bill-zhanxg/netball-calculator"
 						title="Netball Calculator"
 						description="This program is designed for teachers to keep track of scores for each player (Goal Attack, Goal Shooter) and round in a netball game. It is intended to replace the Netball score sheet used by the Christian Schools Events Network."
 					/>
 					<Card
 						image={MCPECracker}
 						imageText="MCPE Cracker"
-						github="https://github.com/bill-zhanxg/MCPE-Cracker"
+						github="https://github.com/bill-zhanxg/mcpe-cracker"
 						title="MCPE-Cracker"
 						description="A small tool for automatic cracking Minecraft for Windows Edition"
 					/>
@@ -110,7 +110,7 @@ export default function Projects(): JSX.Element {
 						image={TokenGrabber}
 						imageText="Token Grabber"
 						youtube="https://youtu.be/Vwm5yTn8y0g"
-						github="https://github.com/bill-zhanxg/Token-Grabber"
+						github="https://github.com/bill-zhanxg/token-grabber"
 						title="Token Grabber"
 						description="This program allows an attacker to steal the saved passwords from the victim's browser. Please use it solely for educational purposes and not for illegal activities. The creator of this program is not responsible for any damage caused by its use."
 					/>
@@ -124,14 +124,14 @@ export default function Projects(): JSX.Element {
 					<Card
 						image={Pong}
 						imageText="Pong"
-						github="https://github.com/bill-zhanxg/Pong-Game"
+						github="https://github.com/bill-zhanxg/pong"
 						title="Pong"
 						description="Play a classic game of Pong against yourself in this version made by me for a school project. Control your paddle and score points by hitting the ball past your opponent."
 					/>
 					<Card
 						image={SpaceInvaders}
 						imageText="Space Invaders"
-						github="https://github.com/bill-zhanxg/Space-Invaders"
+						github="https://github.com/bill-zhanxg/space-invaders"
 						title="Space Invaders"
 						description="Play my version of Space Invaders for a school project. Defend your planet against an alien invasion in classic or modern mode."
 					/>
@@ -162,7 +162,7 @@ export default function Projects(): JSX.Element {
 					<Card
 						image={ChromeTRex}
 						imageText="Chrome T-Rex"
-						github="https://github.com/bill-zhanxg/ChromeT-Rex-Remake"
+						github="https://github.com/bill-zhanxg/chrome-dinosaur-remake"
 						title="Chrome T-Rex Remake"
 						description="Play my version of Chrome's T-Rex Remake game. Jump over cacti and dodge obstacles as you run through the desert. Enjoy this classic game with a new twist in my remake."
 					/>
@@ -170,7 +170,7 @@ export default function Projects(): JSX.Element {
 						image={Hydra}
 						imageText="Hydra"
 						youtube="https://youtu.be/Ik7tQvDkZVg"
-						github="https://github.com/bill-zhanxg/Hydra-copy"
+						github="https://github.com/bill-zhanxg/hydra-remake"
 						title="Hydra Virus"
 						description="This is my first program ever - a virus. It's a program that replicates itself when you try to close it. While it's not harmful, it's recommended that you only run it in a virtual machine."
 					/>
@@ -178,7 +178,7 @@ export default function Projects(): JSX.Element {
 						image={Malware}
 						imageText="Malware"
 						youtube="https://youtu.be/9iglWm4SkIs"
-						github="https://github.com/bill-zhanxg/Malware-Database"
+						github="https://github.com/bill-zhanxg/malware-database"
 						title="Malware Database"
 						description="This is a database for malware. Please only use it with caution."
 					/>
