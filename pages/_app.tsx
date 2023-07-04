@@ -4,6 +4,7 @@ import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import Image from 'next/image';
 import { Router, useRouter } from 'next/router';
+import Script from 'next/script';
 import { useEffect, useRef } from 'react';
 import { FaBars, FaDiscord, FaGithub, FaYoutube } from 'react-icons/fa';
 import { GrMail } from 'react-icons/gr';
@@ -12,6 +13,12 @@ import ConnectionIcon from '../components/ConnectionIcon';
 import NavBarItem from '../components/main/NavBarItem';
 import Dog from '../images/dog.jpg';
 import '../styles/globals.css';
+
+declare global {
+	interface Window {
+		dataLayer: any[];
+	}
+}
 
 const progressBar = new ProgressBar({
 	size: 5,
@@ -38,6 +45,28 @@ export default function App({ Component, pageProps }: AppProps): JSX.Element {
 		if (navBar.current) navBar.current.checked = false;
 	}
 
+	useEffect(() => {
+		(function (c: any, l: any, a: any, r: any, i: any) {
+			c[a] =
+				c[a] ||
+				function () {
+					(c[a].q = c[a].q || []).push(arguments);
+				};
+			const t = l.createElement(r);
+			t.async = 1;
+			t.src = 'https://www.clarity.ms/tag/' + i;
+			const y = l.getElementsByTagName(r)[0];
+			y.parentNode.insertBefore(t, y);
+		})(window, document, 'clarity', 'script', 'hi3l5s5opu');
+
+		window.dataLayer = window.dataLayer || [];
+		function gtag(..._: any[]) {
+			window.dataLayer.push(arguments);
+		}
+		gtag('js', new Date());
+		gtag('config', 'G-BSTQBLLQ2C');
+	}, []);
+
 	const openGraph = {
 		title: 'Homepage - Bill.IHCha',
 		description:
@@ -48,6 +77,7 @@ export default function App({ Component, pageProps }: AppProps): JSX.Element {
 
 	return (
 		<>
+			<Script src="https://www.googletagmanager.com/gtag/js?id=G-BSTQBLLQ2C" />
 			<Head>
 				{/* HTML Meta Tags */}
 				<title>{openGraph.title}</title>

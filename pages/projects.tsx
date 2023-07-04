@@ -54,6 +54,15 @@ export default function Projects(): JSX.Element {
 						description="This app allows the user to sync files outside the OneDrive folder by creating a Directory Junction."
 					/>
 					<Card
+						image={Livfac}
+						imageText="Livfac"
+						isNew
+						website="https://livfac.bill-zhanxg.com/"
+						discord='https://discord.gg/A9yxVVr2kH'
+						title="Livfac"
+						description="Livfac is a Minecraft server that I am currently developing. It's now in public beta."
+					/>
+					<Card
 						image={RemoteCrossplay}
 						imageText="Remote Crossplay"
 						isNew
@@ -151,13 +160,6 @@ export default function Projects(): JSX.Element {
 						discord="https://discord.gg/nethergames"
 						title="Asylum Bot"
 						description="Asylum is a NetherGames ranked BedWars and The Bridge Discord server. We organize tournaments, queues, and have an Elo point system with prizes awarded at the end of each season."
-					/>
-					<Card
-						image={Livfac}
-						imageText="Livfac"
-						website="https://livfac.bill-zhanxg.com/"
-						title="Livfac"
-						description="Livfac is a Minecraft server that I am currently developing. It has not been published yet."
 					/>
 					<Card
 						image={ChromeTRex}
