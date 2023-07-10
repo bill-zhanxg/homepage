@@ -174,6 +174,7 @@ export default function App({ Component, pageProps }: AppProps): JSX.Element {
 							<NavBarItem hideNavBar={hideNavBar} router={router} url="/discord" text="Discord" />
 							<NavBarItem hideNavBar={hideNavBar} router={router} url="/donation" text="Donation" />
 							<NavBarItem hideNavBar={hideNavBar} router={router} url="/subscription" text="Subscription" />
+							<NavBarItem hideNavBar={hideNavBar} router={router} url="https://stats.uptimerobot.com/2lnqqFKpD9" text="Website Status" newTab />
 						</motion.ul>
 					</div>
 				</div>

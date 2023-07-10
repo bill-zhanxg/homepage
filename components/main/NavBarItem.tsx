@@ -7,11 +7,13 @@ export default function NavBarItem({
 	router,
 	url,
 	text,
+	newTab = false,
 }: {
 	hideNavBar: () => void;
 	router: NextRouter;
 	url: string;
 	text: string;
+	newTab?: boolean;
 }) {
 	return (
 		<motion.li
@@ -24,7 +26,7 @@ export default function NavBarItem({
 			{router.pathname === url ? (
 				<motion.div layoutId="nav-bar" className="w-full h-full absolute bg-primary rounded-lg" />
 			) : null}
-			<Link className="z-0 gap-0" href={url}>
+			<Link className="z-0 gap-0" href={url} target={newTab ? '_blank' : undefined}>
 				{text.split('').map((char, index) => (
 					<motion.span
 						key={index}
