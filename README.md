@@ -6,7 +6,7 @@
 ![Uptime Robot status](https://img.shields.io/uptimerobot/status/m794765297-93259cc89d10c77a6c3e0ce0?label=website%20status)
 ![Uptime Robot ratio (30 days)](https://img.shields.io/uptimerobot/ratio/m794765297-93259cc89d10c77a6c3e0ce0?label=website%20uptime)
 
-![Discord](https://img.shields.io/discord/768368356436475905?logo=discord&link=https%3A%2F%2Fbill-zhanxg.com%2Fdiscord)
+[![Discord](https://img.shields.io/discord/768368356436475905?logo=discord)](https://bill-zhanxg.com/discord)
 
 Hello there! 👋
 
