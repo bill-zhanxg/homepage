@@ -9,7 +9,7 @@ export default function Discord(): JSX.Element {
 	return (
 		<>
 			<Head>
-				<title>Donation - Bill.IHCha</title>
+				<title>Discord - Bill.IHCha</title>
 			</Head>
 			<motion.div exit={{ y: -10, opacity: 0 }} className="pt-12 pb-6 p-2 sm:pt-12 md:p-10 lg:p-14 h-full">
 				<div className="flex flex-col items-center text-center gap-2 h-full">
