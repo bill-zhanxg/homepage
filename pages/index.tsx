@@ -54,7 +54,7 @@ export default function Home(): JSX.Element {
 									target="_blank"
 									className="link link-primary"
 								>
-									WinUI
+									WinUI 3
 								</Link>{' '}
 								/{' '}
 								<Link
@@ -62,12 +62,12 @@ export default function Home(): JSX.Element {
 									target="_blank"
 									className="link link-primary"
 								>
-									Fluent UI
+									Fluent Design
 								</Link>
 								&#41;
 							</span>
 						</p>
-						<p>• 🎨 I can code stuffs, but not good at designing :&#40;</p>
+						<p>• 🎨 I can code stuffs, fine at designing :&#41;</p>
 						<p>
 							• 📘 Good at math <span className="font-sans">&#58;&#68;</span>
 						</p>
@@ -126,7 +126,7 @@ export default function Home(): JSX.Element {
 						<p>• 🗄️ IT, Server Management</p>
 						<p>• 📐 Problem Solver</p>
 						<p>• 🎨 Learning designing / Colors</p>
-						<p>• 🅰 English = uhhhh...</p>
+						<p>• 🅰 Can&apos;t English well</p>
 						<p>• 📘 Nerd</p>
 					</div>
 				</Paragraph1>
