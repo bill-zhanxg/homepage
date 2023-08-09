@@ -50,7 +50,7 @@ export default function Home(): JSX.Element {
 							<span>
 								Love the new Microsoft design &#40;
 								<Link
-									href="https://microsoft.github.io/microsoft-ui-xaml/"
+									href="https://github.com/Microsoft/microsoft-ui-xaml"
 									target="_blank"
 									className="link link-primary"
 								>
