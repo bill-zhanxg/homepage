@@ -24,6 +24,8 @@ import SpaceInvaders from '../images/projects/space-invaders.jpg';
 import StartUpProgramControl from '../images/projects/startup-program-control.png';
 import Stob from '../images/projects/stob.jpg';
 import TokenGrabber from '../images/projects/token-grabber.jpg';
+import CSEN from '../images/projects/csen.jpg';
+import BloodLust from '../images/projects/bloodlust.jpg';
 
 export default function Projects(): JSX.Element {
 	return (
@@ -37,9 +39,25 @@ export default function Projects(): JSX.Element {
 				</div>
 				<CardParent>
 					<Card
+						image={CSEN}
+						imageText="CSEN"
+						github="https://github.com/bill-zhanxg/ccs-sport"
+						title="CCS Sport"
+						description="Something that I'm currently developing. 🤫"
+						isNew
+					/>
+					<Card
+						image={BloodLust}
+						imageText="BloodLust"
+						youtube='https://www.youtube.com/@bloodlust7777'
+						discord='https://discord.gg/bloodlst'
+						title="BloodLust"
+						description="Another ranked BedWars server that I made a bot for."
+						isNew
+					/>
+					<Card
 						image={Homepage}
 						imageText="Homepage"
-						isNew
 						website="https://bill-zhanxg.com/"
 						github="https://github.com/bill-zhanxg/homepage"
 						title="My Homepage"
@@ -48,7 +66,6 @@ export default function Projects(): JSX.Element {
 					<Card
 						image={OneDriveSyncAnywhere}
 						imageText="OneDrive Sync Anywhere"
-						isNew
 						github="https://github.com/bill-zhanxg/onedrive-sync-anywhere"
 						title="OneDrive Sync Anywhere"
 						description="This app allows the user to sync files outside the OneDrive folder by creating a Directory Junction."
@@ -56,16 +73,14 @@ export default function Projects(): JSX.Element {
 					<Card
 						image={Livfac}
 						imageText="Livfac"
-						isNew
 						website="https://livfac.bill-zhanxg.com/"
-						discord='https://discord.gg/A9yxVVr2kH'
+						discord="https://discord.gg/A9yxVVr2kH"
 						title="Livfac"
 						description="Livfac is a Minecraft server that I am currently developing. It's now in public beta."
 					/>
 					<Card
 						image={RemoteCrossplay}
 						imageText="Remote Crossplay"
-						isNew
 						github="https://github.com/bill-zhanxg/remote-crossplay"
 						title="Remote Crossplay"
 						description="This application enables users to engage in a single-device game on multiple devices simultaneously."

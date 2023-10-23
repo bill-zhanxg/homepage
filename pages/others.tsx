@@ -124,7 +124,6 @@ export default function Others(): JSX.Element {
 					<Card
 						image={MicrosoftEdge}
 						imageText="Microsoft Edge"
-						isNew
 						website="https://www.microsoft.com/en-us/edge"
 						youtube="https://www.youtube.com/@MSFTEdge"
 						title="Microsoft Edge"
@@ -133,7 +132,6 @@ export default function Others(): JSX.Element {
 					<Card
 						image={MicrosoftBing}
 						imageText="Microsoft Bing"
-						isNew
 						website="https://www.bing.com/"
 						youtube="https://www.youtube.com/@bing"
 						title="Microsoft Bing"
