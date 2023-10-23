@@ -172,7 +172,7 @@ export default function Projects(): JSX.Element {
 						image={Asylum}
 						imageText="Asylum"
 						youtube="https://www.youtube.com/@asylum8237"
-						discord="https://discord.gg/ngscrims"
+						discord="https://discord.gg/synefX6vKR"
 						title="Asylum Bot"
 						description="Asylum is a NetherGames ranked BedWars and The Bridge Discord server. We organize tournaments, queues, and have an Elo point system with prizes awarded at the end of each season."
 					/>
