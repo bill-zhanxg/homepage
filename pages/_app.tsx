@@ -113,7 +113,7 @@ export default function App({ Component, pageProps }: AppProps): JSX.Element {
 							<Component {...pageProps} key={router.pathname} />
 						</AnimatePresence>
 					</div>
-					<div className="drawer-side">
+					<div className="drawer-side z-50">
 						<label htmlFor="nav-side-bar" aria-label="close sidebar" className="drawer-overlay"></label>
 						<motion.ul
 							variants={{

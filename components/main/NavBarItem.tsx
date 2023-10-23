@@ -26,7 +26,7 @@ export default function NavBarItem({
 			{router.pathname === url ? (
 				<motion.div layoutId="nav-bar" className="w-full h-full absolute bg-primary rounded-lg" />
 			) : null}
-			<Link className="z-0 gap-0 inline" href={url} target={newTab ? '_blank' : undefined}>
+			<Link className="z-0 gap-0 text-lg inline" href={url} target={newTab ? '_blank' : undefined}>
 				{text.split('').map((char, index) => (
 					<motion.span
 						key={index}
