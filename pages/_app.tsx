@@ -100,7 +100,7 @@ export default function App({ Component, pageProps }: AppProps): JSX.Element {
 				<meta name="twitter:image" content={Dog.src} />
 			</Head>
 			<motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 0.3 }}>
-				<div className="drawer drawer-mobile">
+				<div className="drawer lg:drawer-open">
 					<input id="nav-side-bar" ref={navBar} type="checkbox" className="drawer-toggle" />
 					<div ref={pageContent} className="drawer-content">
 						<label
@@ -114,7 +114,7 @@ export default function App({ Component, pageProps }: AppProps): JSX.Element {
 						</AnimatePresence>
 					</div>
 					<div className="drawer-side">
-						<label htmlFor="nav-side-bar" className="drawer-overlay"></label>
+						<label htmlFor="nav-side-bar" aria-label="close sidebar" className="drawer-overlay"></label>
 						<motion.ul
 							variants={{
 								show: {
@@ -126,7 +126,7 @@ export default function App({ Component, pageProps }: AppProps): JSX.Element {
 							}}
 							initial="hidden"
 							animate="show"
-							className="menu p-2 w-64 bg-base-300 text-base-content"
+							className="menu p-2 w-64 min-h-full bg-base-200 text-base-content"
 						>
 							<motion.div className="py-4 flex items-center gap-4">
 								<motion.div
