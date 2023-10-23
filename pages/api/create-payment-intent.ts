@@ -1,13 +1,9 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import Stripe from 'stripe';
 
+import { stripe } from 'libs/stripe';
 import { default as currencies } from '../../libs/currencies.json';
 import handleServerError from '../../libs/handleServerError';
-
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
-	apiVersion: '2022-11-15',
-	typescript: true,
-});
 
 function formatAmount(amount: any) {
 	if (amount === undefined) return new Error('Amount can not be undefined');

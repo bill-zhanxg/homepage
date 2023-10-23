@@ -1,16 +1,13 @@
-import handleServerError from 'libs/handleServerError';
 import type { NextApiRequest, NextApiResponse } from 'next';
-import Stripe from 'stripe';
+
+import handleServerError from 'libs/handleServerError';
+import { stripe } from 'libs/stripe';
 
 export const config = {
 	api: {
 		bodyParser: false,
 	},
 };
-
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
-	apiVersion: '2022-11-15',
-});
 
 function buffer(req: NextApiRequest) {
 	return new Promise<Buffer>((resolve, reject) => {
