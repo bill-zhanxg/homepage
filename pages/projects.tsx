@@ -43,7 +43,7 @@ export default function Projects(): JSX.Element {
 						imageText="CSEN"
 						github="https://github.com/bill-zhanxg/ccs-sport"
 						title="CCS Sport"
-						description="Something that I'm currently developing. 🤫"
+						description="Something that I'm currently developing. 🤫!"
 						isNew
 					/>
 					<Card
