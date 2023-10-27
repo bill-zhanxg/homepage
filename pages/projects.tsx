@@ -5,7 +5,9 @@ import Title from 'components/Title';
 import CardParent from 'components/projects/CardParent';
 import Card from '../components/projects/Card';
 import Asylum from '../images/projects/asylum.gif';
+import BloodLust from '../images/projects/bloodlust.png';
 import ChromeTRex from '../images/projects/chrome-t-rex.jpg';
+import CSEN from '../images/projects/csen.jpg';
 import FireboyAndWatergirl from '../images/projects/fireboy-and-watergirl.jpg';
 import GetAdmin from '../images/projects/get-admin.jpg';
 import Hastebin from '../images/projects/hastebin.jpg';
@@ -24,8 +26,6 @@ import SpaceInvaders from '../images/projects/space-invaders.jpg';
 import StartUpProgramControl from '../images/projects/startup-program-control.png';
 import Stob from '../images/projects/stob.jpg';
 import TokenGrabber from '../images/projects/token-grabber.jpg';
-import CSEN from '../images/projects/csen.jpg';
-import BloodLust from '../images/projects/bloodlust.jpg';
 
 export default function Projects(): JSX.Element {
 	return (
@@ -49,8 +49,8 @@ export default function Projects(): JSX.Element {
 					<Card
 						image={BloodLust}
 						imageText="BloodLust"
-						youtube='https://www.youtube.com/@bloodlust7777'
-						discord='https://discord.gg/bloodlst'
+						youtube="https://www.youtube.com/@bloodlust7777"
+						discord="https://discord.gg/bloodlst"
 						title="BloodLust"
 						description="Another ranked BedWars server that I made a bot for."
 						isNew
