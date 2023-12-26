@@ -1,3 +1,4 @@
+import Dog from '@/images/dog.jpg';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { AnimatePresence, motion } from 'framer-motion';
@@ -46,19 +47,19 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 			<body className={inter.className}>
 				<motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 0.3 }}>
 					<div className="drawer lg:drawer-open">
-						<input id="nav-side-bar" ref={navBar} type="checkbox" className="drawer-toggle" />
-						<div ref={pageContent} className="drawer-content">
+						<input id="nav-side-bar"  type="checkbox" className="drawer-toggle" />
+						<div className="drawer-content">
 							<label
 								htmlFor="nav-side-bar"
 								className="btn rounded-none rounded-br-lg drawer-button hover:text-primary fixed lg:hidden z-50"
 							>
 								<FaBars />
 							</label>
-							<AnimatePresence mode="wait">
-								{children}
+							{/* <AnimatePresence mode="wait"> */}
+								{/* {children} */}
 								{/* TODO */}
 								{/* <Component {...pageProps} key={router.pathname} /> */}
-							</AnimatePresence>
+							{/* </AnimatePresence> */}
 						</div>
 						<div className="drawer-side z-50">
 							<label htmlFor="nav-side-bar" aria-label="close sidebar" className="drawer-overlay"></label>
@@ -115,19 +116,19 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 										</div>
 									</motion.div>
 								</motion.div>
-								<NavBarItem hideNavBar={hideNavBar} router={router} url="/" text="Home" />
+								{/* <NavBarItem hideNavBar={hideNavBar} router={router} url="/" text="Home" />
 								<NavBarItem hideNavBar={hideNavBar} router={router} url="/projects" text="My Projects" />
 								<NavBarItem hideNavBar={hideNavBar} router={router} url="/others" text="Cool Stuffs" />
 								<NavBarItem hideNavBar={hideNavBar} router={router} url="/discord" text="Discord" />
 								<NavBarItem hideNavBar={hideNavBar} router={router} url="/donation" text="Donation" />
-								<NavBarItem hideNavBar={hideNavBar} router={router} url="/subscription" text="Subscription" />
-								<NavBarItem
+								<NavBarItem hideNavBar={hideNavBar} router={router} url="/subscription" text="Subscription" /> */}
+								{/* <NavBarItem
 									hideNavBar={hideNavBar}
 									router={router}
 									url="https://stats.uptimerobot.com/2lnqqFKpD9"
 									text="Website Status"
 									newTab
-								/>
+								/> */}
 							</motion.ul>
 						</div>
 					</div>
