@@ -39,6 +39,13 @@ export default function Projects(): JSX.Element {
 				</div>
 				<CardParent>
 					<Card
+						image={OnlineStorageSystem}
+						imageText="Placeholder Image"
+						website="https://onlinesafety.co.in/"
+						title="Online Safety"
+						description="This website is constructed all by myself for the company, with Nextjs App directory, Tailwindcss, DaisyUI, and Auth.js."
+					/>
+					<Card
 						image={CSEN}
 						imageText="CSEN"
 						github="https://github.com/bill-zhanxg/ccs-sport"
