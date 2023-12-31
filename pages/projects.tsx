@@ -26,6 +26,7 @@ import SpaceInvaders from '../images/projects/space-invaders.jpg';
 import StartUpProgramControl from '../images/projects/startup-program-control.png';
 import Stob from '../images/projects/stob.jpg';
 import TokenGrabber from '../images/projects/token-grabber.jpg';
+import OnlineSafety from '../images/projects/online-safety.png';
 
 export default function Projects(): JSX.Element {
 	return (
@@ -39,18 +40,19 @@ export default function Projects(): JSX.Element {
 				</div>
 				<CardParent>
 					<Card
-						image={OnlineStorageSystem}
-						imageText="Placeholder Image"
+						image={OnlineSafety}
+						imageText="Online Safety"
 						website="https://onlinesafety.co.in/"
 						title="Online Safety"
-						description="This website is constructed all by myself for the company, with Nextjs App directory, Tailwindcss, DaisyUI, and Auth.js."
+						description="This website is constructed all by myself for the company, with Nextjs App directory, Tailwindcss, DaisyUI, and Auth.js. (Under development)"
+						isNew
 					/>
 					<Card
 						image={CSEN}
 						imageText="CSEN"
 						github="https://github.com/bill-zhanxg/ccs-sport"
 						title="CCS Sport"
-						description="Something that I'm currently developing. 🤫!"
+						description="Something that I'm currently working on. 🤫!"
 						isNew
 					/>
 					<Card
