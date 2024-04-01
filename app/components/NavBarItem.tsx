@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion';
+import type e from 'next-nprogress-bar';
 import Link from 'next/link';
-import { NextRouter } from 'next/router';
 
-export default function NavBarItem({
+export function NavBarItem({
 	hideNavBar,
 	router,
 	url,
@@ -10,7 +10,7 @@ export default function NavBarItem({
 	newTab = false,
 }: {
 	hideNavBar: () => void;
-	router: NextRouter;
+	router: typeof e;
 	url: string;
 	text: string;
 	newTab?: boolean;
