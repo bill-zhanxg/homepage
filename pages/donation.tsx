@@ -10,6 +10,7 @@ import { useRouter } from 'next/router';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { FaDesktop, FaRegTimesCircle, FaServer } from 'react-icons/fa';
 
+import classNames from 'classnames';
 import { default as currencies } from '../libs/currencies.json';
 
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY);
@@ -287,11 +288,14 @@ export default function Donation() {
 				<motion.div
 					initial={{ y: 100, opacity: 0, filter: 'blur(10px)' }}
 					ref={popupElement}
-					className={
-						'alert shadow-lg overflow-hidden absolute w-[95%] left-[50%] -translate-x-new-half bottom-10' +
-						(!error ? ' hidden' : '') +
-						(error?.success ? ' alert-success shadow-green-400' : ' alert-error shadow-red-400')
-					}
+					className={classNames(
+						'alert shadow-lg overflow-hidden absolute w-[95%] left-[50%] -translate-x-new-half bottom-10',
+						{
+							hidden: !error,
+							'alert-success shadow-green-400': error?.success,
+							'alert-error shadow-red-400': !error?.success,
+						},
+					)}
 				>
 					<div className="flex flex-col items-center justify-center w-full text-lg font-bold">
 						<div
