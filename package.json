@@ -11,6 +11,8 @@
   "dependencies": {
     "@stripe/react-stripe-js": "^3.1.1",
     "@stripe/stripe-js": "^5.5.0",
+    "@vercel/analytics": "^1.4.1",
+    "@vercel/speed-insights": "^1.1.0",
     "@widgetbot/react-embed": "^1.9.0",
     "babel-plugin-react-compiler": "^19.0.0-beta-63e3235-20250105",
     "classnames": "^2.5.1",

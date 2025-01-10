@@ -1,18 +1,17 @@
-import ProgressBar from '@badrap/bar-of-progress';
 import { AnimatePresence, motion } from 'framer-motion';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import Image from 'next/image';
-import { Router, useRouter } from 'next/router';
+import { useRouter } from 'next/router';
 import Script from 'next/script';
 import { useEffect, useRef } from 'react';
 import { FaBars, FaDiscord, FaGithub, FaYoutube } from 'react-icons/fa';
 import { GrMail } from 'react-icons/gr';
 
+import '../app/globals.css';
 import ConnectionIcon from '../components/ConnectionIcon';
 import NavBarItem from '../components/main/NavBarItem';
 import Dog from '../images/dog.jpg';
-import '../styles/globals.css';
 
 declare global {
 	interface Window {
@@ -20,16 +19,7 @@ declare global {
 	}
 }
 
-const progressBar = new ProgressBar({
-	size: 5,
-	color: '#3ABFF8',
-});
-
-Router.events.on('routeChangeStart', progressBar.start);
-Router.events.on('routeChangeComplete', progressBar.finish);
-Router.events.on('routeChangeError', progressBar.finish);
-
-export default function App({ Component, pageProps }: AppProps): JSX.Element {
+export default function App({ Component, pageProps }: AppProps): React.JSX.Element {
 	const router = useRouter();
 	const navBar = useRef<HTMLInputElement>(null);
 	const pageContent = useRef<HTMLDivElement>(null);
@@ -174,7 +164,13 @@ export default function App({ Component, pageProps }: AppProps): JSX.Element {
 							<NavBarItem hideNavBar={hideNavBar} router={router} url="/discord" text="Discord" />
 							<NavBarItem hideNavBar={hideNavBar} router={router} url="/donation" text="Donation" />
 							<NavBarItem hideNavBar={hideNavBar} router={router} url="/subscription" text="Subscription" />
-							<NavBarItem hideNavBar={hideNavBar} router={router} url="https://stats.uptimerobot.com/2lnqqFKpD9" text="Website Status" newTab />
+							<NavBarItem
+								hideNavBar={hideNavBar}
+								router={router}
+								url="https://stats.uptimerobot.com/2lnqqFKpD9"
+								text="Website Status"
+								newTab
+							/>
 						</motion.ul>
 					</div>
 				</div>

@@ -62,7 +62,7 @@
 
 @utility menu {
 	& :where(li:not(.disabled)) > :where(*:not(ul)) {
-		@apply active:bg-primary-focus;
+		@apply active:bg-primary;
 		transition-property: inherit;
 		transition-duration: inherit;
 		transition-timing-function: inherit;
