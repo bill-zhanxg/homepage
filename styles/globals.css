@@ -3,8 +3,6 @@
 @import 'tailwindcss';
 @plugin "daisyui";
 
-@config '../tailwind.config.js';
-
 @plugin "daisyui/theme" {
 	name: 'dark';
 	default: true;
