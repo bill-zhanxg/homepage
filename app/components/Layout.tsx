@@ -1,18 +1,18 @@
+'use client';
+import Dog from '@/images/dog.jpg';
 import { AnimatePresence, motion } from 'framer-motion';
 import Image from 'next/image';
-import { useRouter } from 'next/router';
+import { usePathname } from 'next/navigation';
 import { useCallback, useEffect, useRef } from 'react';
 import { FaBars, FaDiscord, FaGithub, FaYoutube } from 'react-icons/fa';
 import { GrMail } from 'react-icons/gr';
-import Dog from '../images/dog.jpg';
 import ConnectionIcon from './ConnectionIcon';
 import NavBarItem from './NavBarItem';
 
 export function Layout({ children }: { children: React.ReactNode }) {
-	const router = useRouter();
+	const pathname = usePathname();
 	const navBar = useRef<HTMLInputElement>(null);
 	const pageContent = useRef<HTMLDivElement>(null);
-	const { pathname } = useRouter();
 
 	useEffect(() => {
 		setTimeout(() => {
@@ -92,15 +92,14 @@ export function Layout({ children }: { children: React.ReactNode }) {
 								</div>
 							</motion.div>
 						</motion.div>
-						<NavBarItem hideNavBar={hideNavBar} router={router} url="/" text="Home" />
-						<NavBarItem hideNavBar={hideNavBar} router={router} url="/projects" text="My Projects" />
-						<NavBarItem hideNavBar={hideNavBar} router={router} url="/others" text="Cool Stuffs" />
-						<NavBarItem hideNavBar={hideNavBar} router={router} url="/discord" text="Discord" />
-						<NavBarItem hideNavBar={hideNavBar} router={router} url="/donation" text="Donation" />
-						<NavBarItem hideNavBar={hideNavBar} router={router} url="/subscription" text="Subscription" />
+						<NavBarItem hideNavBar={hideNavBar} url="/" text="Home" />
+						<NavBarItem hideNavBar={hideNavBar} url="/projects" text="My Projects" />
+						<NavBarItem hideNavBar={hideNavBar} url="/others" text="Cool Stuffs" />
+						<NavBarItem hideNavBar={hideNavBar} url="/discord" text="Discord" />
+						<NavBarItem hideNavBar={hideNavBar} url="/donation" text="Donation" />
+						<NavBarItem hideNavBar={hideNavBar} url="/subscription" text="Subscription" />
 						<NavBarItem
 							hideNavBar={hideNavBar}
-							router={router}
 							url="https://stats.uptimerobot.com/2lnqqFKpD9"
 							text="Website Status"
 							newTab

@@ -1,20 +1,20 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { NextRouter } from 'next/router';
+import { usePathname } from 'next/navigation';
 
 export default function NavBarItem({
 	hideNavBar,
-	router,
 	url,
 	text,
 	newTab = false,
 }: {
 	hideNavBar: () => void;
-	router: NextRouter;
 	url: string;
 	text: string;
 	newTab?: boolean;
 }) {
+	const pathname = usePathname();
+
 	return (
 		<motion.li
 			variants={{
@@ -23,7 +23,7 @@ export default function NavBarItem({
 			}}
 			onClick={hideNavBar}
 		>
-			{router.pathname === url ? (
+			{pathname === url ? (
 				<motion.div layoutId="nav-bar" className="w-full h-full absolute bg-primary rounded-lg" />
 			) : null}
 			<Link className="z-0 gap-0 text-lg inline" href={url} target={newTab ? '_blank' : undefined}>

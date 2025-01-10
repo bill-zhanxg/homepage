@@ -4,6 +4,7 @@ import type { Metadata, Viewport } from 'next';
 import Dog from '../images/dog.jpg';
 import BarOfProgress from './components/BarOfProgress';
 
+import { Layout } from './components/Layout';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -35,7 +36,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 	return (
 		<html lang="en">
 			<body>
-				{children}
+				<Layout>{children}</Layout>
 
 				<BarOfProgress />
 
