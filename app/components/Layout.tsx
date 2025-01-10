@@ -6,7 +6,7 @@ import { usePathname } from 'next/navigation';
 import { useCallback, useEffect, useRef } from 'react';
 import { FaBars, FaDiscord, FaGithub, FaYoutube } from 'react-icons/fa';
 import { GrMail } from 'react-icons/gr';
-import ConnectionIcon from './ConnectionIcon';
+import ConnectionIcon from '../globalComponents/ConnectionIcon';
 import NavBarItem from './NavBarItem';
 
 export function Layout({ children }: { children: React.ReactNode }) {

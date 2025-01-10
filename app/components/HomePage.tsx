@@ -1,22 +1,24 @@
+'use client';
+
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { FaMicrosoft } from 'react-icons/fa';
 
-import Title from 'components/Title';
+import AusFlag from '@/images/home/aus-flag.jpg';
+import Colors from '@/images/home/colors.jpg';
+import Discord from '@/images/home/discord.jpg';
+import Piano from '@/images/home/piano.jpg';
+import Unity from '@/images/home/unity.jpg';
+import Win11Wallpaper from '@/images/home/win11-wallpaper.jpg';
 import Link from 'next/link';
-import Description from '../components/Description';
-import HomeImage from '../components/home/HomeImage';
-import Paragraph from '../components/home/Paragraph';
-import Paragraph1 from '../components/home/Paragraph1';
-import Paragraph2 from '../components/home/Paragraph2';
-import AusFlag from '../images/home/aus-flag.jpg';
-import Colors from '../images/home/colors.jpg';
-import Discord from '../images/home/discord.jpg';
-import Piano from '../images/home/piano.jpg';
-import Unity from '../images/home/unity.jpg';
-import Win11Wallpaper from '../images/home/win11-wallpaper.jpg';
+import Title from '../globalComponents/Title';
+import Description from './Description';
+import HomeImage from './HomeImage';
+import Paragraph from './Paragraph';
+import Paragraph1 from './Paragraph1';
+import Paragraph2 from './Paragraph2';
 
-export default function Home(): JSX.Element {
+export function HomePage() {
 	const [isAnimating, setIsAnimating] = useState(true);
 
 	return (

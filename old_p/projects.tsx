@@ -28,7 +28,7 @@ import Stob from '../images/projects/stob.jpg';
 import TokenGrabber from '../images/projects/token-grabber.jpg';
 import OnlineSafety from '../images/projects/online-safety.png';
 
-export default function Projects(): JSX.Element {
+export default function Projects() {
 	return (
 		<>
 			<Head>
