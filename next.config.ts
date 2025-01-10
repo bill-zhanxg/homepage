@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
 		authInterrupts: true,
 		ppr: true,
 		reactCompiler: true,
-		dynamicIO: true,
+		// dynamicIO: true,
 	},
 };
 

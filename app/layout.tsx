@@ -15,8 +15,9 @@ export const metadata: Metadata = {
 	},
 	description:
 		'Full stack developer, Discord bot developer, App developer, Minecraft Plugin & Mod developer, Game developer, Server developer. I am known online as Bill.IHCha, Bill.zhanxg, Bill-zhanxg. People usually just call me Bill.',
+	metadataBase: new URL('https://bill-zhanxg.com'),
 	openGraph: {
-		url: 'https://bill-zhanxg.com/',
+		url: '/',
 		type: 'website',
 		images: Dog.src,
 	},
@@ -32,7 +33,7 @@ export const viewport: Viewport = {
 	height: 'device-height',
 };
 
-export default async function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
 	return (
 		<html lang="en">
 			<body>
