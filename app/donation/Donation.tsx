@@ -2,7 +2,7 @@
 
 import { default as currencies } from '@/libs/currencies.json';
 import { Elements } from '@stripe/react-stripe-js';
-import { loadStripe, StripeElementsOptions } from '@stripe/stripe-js';
+import { StripeElementsOptions } from '@stripe/stripe-js';
 import classNames from 'classnames';
 import { AnimatePresence, motion, useAnimate } from 'framer-motion';
 import Link from 'next/link';
@@ -12,9 +12,7 @@ import { FaDesktop, FaRegTimesCircle, FaServer } from 'react-icons/fa';
 import Description from '../components/Description';
 import Title from '../globalComponents/Title';
 import CheckoutForm from './CheckoutForm';
-
-const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY);
-let currentPopup: NodeJS.Timeout | undefined;
+import { stripePromise } from './util';
 
 export function Donation() {
 	const [donateLoading, setDonateLoading] = useState(false);
@@ -28,6 +26,7 @@ export function Donation() {
 	const currency = useRef<HTMLSelectElement>(null);
 	const [popupElement, animateErrorElement] = useAnimate();
 	const router = useRouter();
+	const [currentPopup, setCurrentPopup] = useState<NodeJS.Timeout | undefined>();
 
 	useEffect(() => {
 		fetch('https://ipapi.co/json/')
@@ -83,13 +82,13 @@ export function Donation() {
 					.then(() => {
 						if (localPopup === currentPopup) {
 							setError(undefined);
-							currentPopup = undefined;
+							setCurrentPopup(undefined);
 						}
 					})
 					.catch(() => {});
 			}, 3000);
 
-			currentPopup = localPopup;
+			setCurrentPopup(localPopup);
 		},
 		[animateErrorElement, popupElement],
 	);
