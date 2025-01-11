@@ -94,7 +94,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 						</motion.div>
 						<NavBarItem hideNavBar={hideNavBar} url="/" text="Home" />
 						<NavBarItem hideNavBar={hideNavBar} url="/projects" text="My Projects" />
-						<NavBarItem hideNavBar={hideNavBar} url="/others" text="Cool Stuffs" />
+						<NavBarItem hideNavBar={hideNavBar} url="/cool" text="Cool Stuff" />
 						<NavBarItem hideNavBar={hideNavBar} url="/discord" text="Discord" />
 						<NavBarItem hideNavBar={hideNavBar} url="/donation" text="Donation" />
 						<NavBarItem hideNavBar={hideNavBar} url="/subscription" text="Subscription" />
