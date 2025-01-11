@@ -25,6 +25,7 @@ export function Donation() {
 	const amount = useRef<HTMLInputElement>(null);
 	const currency = useRef<HTMLSelectElement>(null);
 	const [popupElement, animateErrorElement] = useAnimate();
+	const [popupElementStyle, setPopupElementStyle] = useState({ bottom: '40px' });
 	const router = useRouter();
 	const [currentPopup, setCurrentPopup] = useState<NodeJS.Timeout | undefined>();
 
@@ -47,12 +48,11 @@ export function Donation() {
 	};
 
 	function mainOnScroll(event: React.UIEvent<HTMLDivElement, UIEvent>) {
-		if (popupElement.current) {
-			popupElement.current.style.bottom =
-				event.currentTarget.scrollTop < 40
-					? `${40 - event.currentTarget.scrollTop}px`
-					: `-${event.currentTarget.scrollTop - 40}px`;
-		}
+		const bottomValue =
+			event.currentTarget.scrollTop < 40
+				? `${40 - event.currentTarget.scrollTop}px`
+				: `-${event.currentTarget.scrollTop - 40}px`;
+		setPopupElementStyle({ bottom: bottomValue });
 	}
 
 	const showPopup = useCallback(
@@ -90,7 +90,7 @@ export function Donation() {
 
 			setCurrentPopup(localPopup);
 		},
-		[animateErrorElement, popupElement],
+		[animateErrorElement, popupElement, currentPopup],
 	);
 
 	function handlePaymentError(message: string, isClient: boolean) {
@@ -277,6 +277,7 @@ export function Donation() {
 			<motion.div
 				initial={{ y: 100, opacity: 0, filter: 'blur(10px)' }}
 				ref={popupElement}
+				style={popupElementStyle}
 				className={classNames(
 					'alert shadow-lg overflow-hidden absolute w-[95%] left-[50%] -translate-x-new-half bottom-10 flex flex-row justify-center',
 					{
