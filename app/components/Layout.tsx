@@ -25,10 +25,10 @@ export function Layout({ children }: { children: React.ReactNode }) {
 	}, []);
 
 	return (
-		<motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 0.3 }}>
-			<div className="drawer lg:drawer-open">
+		<motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 0.3 }} className="h-full">
+			<div className="drawer lg:drawer-open h-full">
 				<input id="nav-side-bar" ref={navBar} type="checkbox" className="drawer-toggle" />
-				<div ref={pageContent} className="drawer-content">
+				<div ref={pageContent} className="drawer-content h-full">
 					<label
 						htmlFor="nav-side-bar"
 						className="btn rounded-none rounded-br-lg drawer-button hover:text-primary fixed lg:hidden z-50"

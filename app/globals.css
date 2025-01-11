@@ -58,6 +58,11 @@
 	:root {
 		--card-p: 1rem;
 	}
+
+	html,
+	body {
+		@apply h-full w-full;
+	}
 }
 
 @utility card-grid-template {
