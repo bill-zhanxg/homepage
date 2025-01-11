@@ -3,9 +3,9 @@ import Image, { StaticImageData } from 'next/image';
 import { BsGlobe2 } from 'react-icons/bs';
 import { FaDiscord, FaGithub, FaNpm, FaYoutube } from 'react-icons/fa';
 
-import ConnectionIcon from '../ConnectionIcon';
+import ConnectionIcon from '../../globalComponents/ConnectionIcon';
 
-export default function Card({
+export function Card({
 	image,
 	imageText,
 	title,
@@ -62,11 +62,11 @@ export default function Card({
 				<p>{description}</p>
 				{connection ? (
 					<div className="card-actions justify-end">
-						{website ? <ConnectionIcon IconType={BsGlobe2} url={website} /> : null}
-						{youtube ? <ConnectionIcon IconType={FaYoutube} url={youtube} /> : null}
-						{discord ? <ConnectionIcon IconType={FaDiscord} url={discord} /> : null}
-						{github ? <ConnectionIcon IconType={FaGithub} url={github} /> : null}
-						{npm ? <ConnectionIcon IconType={FaNpm} url={npm} /> : null}
+						{website ? <ConnectionIcon Icon={BsGlobe2} url={website} /> : null}
+						{youtube ? <ConnectionIcon Icon={FaYoutube} url={youtube} /> : null}
+						{discord ? <ConnectionIcon Icon={FaDiscord} url={discord} /> : null}
+						{github ? <ConnectionIcon Icon={FaGithub} url={github} /> : null}
+						{npm ? <ConnectionIcon Icon={FaNpm} url={npm} /> : null}
 					</div>
 				) : null}
 			</div>

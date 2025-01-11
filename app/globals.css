@@ -54,6 +54,10 @@
 	::file-selector-button {
 		border-color: var(--color-gray-200, currentColor);
 	}
+
+	:root {
+		--card-p: 1rem;
+	}
 }
 
 @utility card-grid-template {
