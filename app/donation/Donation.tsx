@@ -1,22 +1,22 @@
+'use client';
+
+import { default as currencies } from '@/libs/currencies.json';
 import { Elements } from '@stripe/react-stripe-js';
-import { StripeElementsOptions, loadStripe } from '@stripe/stripe-js';
-import Description from 'components/Description';
-import Title from 'components/Title';
-import CheckoutForm from 'components/donation/CheckoutForm';
+import { loadStripe, StripeElementsOptions } from '@stripe/stripe-js';
+import classNames from 'classnames';
 import { AnimatePresence, motion, useAnimate } from 'framer-motion';
-import Head from 'next/head';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next13-progressbar';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { FaDesktop, FaRegTimesCircle, FaServer } from 'react-icons/fa';
-
-import classNames from 'classnames';
-import { default as currencies } from '../libs/currencies.json';
+import Description from '../components/Description';
+import Title from '../globalComponents/Title';
+import CheckoutForm from './CheckoutForm';
 
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY);
 let currentPopup: NodeJS.Timeout | undefined;
 
-export default function Donation() {
+export function Donation() {
 	const [donateLoading, setDonateLoading] = useState(false);
 	const [amountEnabled, setAmountEnabled] = useState(true);
 	const [donateEnabled, setDonateEnabled] = useState(true);
@@ -168,149 +168,136 @@ export default function Donation() {
 					})
 					.catch(() => showPopup('Something went wrong, please try again.', false));
 
-				router.replace('/donation', undefined, { shallow: true });
+				router.replace('/donation');
 			})
 			.catch(() => {
 				showPopup('Something went wrong, please try again.', false);
-				router.replace('/donation', undefined, { shallow: true });
+				router.replace('/donation');
 			});
 	}, [showPopup, router]);
 
 	return (
-		<>
-			<Head>
-				<title>Donation - Bill.IHCha</title>
-			</Head>
-			<motion.div
-				initial="hidden"
-				animate="show"
-				exit={{ y: -10, opacity: 0 }}
-				variants={{
-					show: { transition: { staggerChildren: 0.3, delayChildren: 0.5 } },
-				}}
-				onScroll={mainOnScroll}
-				className="relative pt-12 pb-6 p-2 sm:pt-12 md:p-10 lg:p-14 overflow-y-scroll h-full"
-			>
-				<div className="flex flex-col items-center text-center gap-2">
-					<Title>Donation</Title>
-					<Description>
-						I enjoy creating software for various ventures. However, maintaining operations takes up a lot of time and
-						resources. That is why I ask for charitable contributions to cover costs and keep me motivated. If you enjoy
-						my work, please consider donating. I am legally required to offer something in return for your support when
-						using{' '}
-						<Link
-							href="https://support.stripe.com/questions/requirements-for-accepting-tips-or-donations"
-							target="_blank"
-							className="link link-primary"
-						>
-							Stripe
-						</Link>
-						, so I provide access to the source code. Thank you for your help and encouragement!
-					</Description>
-					<motion.div
-						variants={{
-							hidden: {
-								opacity: 0,
-								x: 50,
-								filter: 'blur(10px)',
-							},
-							show: {
-								opacity: 1,
-								x: 0,
-								filter: 'blur(0px)',
-								transition: {
-									duration: 0.5,
-									ease: 'easeOut',
-								},
-							},
-						}}
-						className="flex flex-row gap-4 w-full"
+		<motion.div
+			initial="hidden"
+			animate="show"
+			exit={{ y: -10, opacity: 0 }}
+			variants={{
+				show: { transition: { staggerChildren: 0.3, delayChildren: 0.5 } },
+			}}
+			onScroll={mainOnScroll}
+			className="relative pt-12 pb-6 p-2 sm:pt-12 md:p-10 lg:p-14 overflow-y-scroll h-full"
+		>
+			<div className="flex flex-col items-center text-center gap-2">
+				<Title>Donation</Title>
+				<Description>
+					I enjoy creating software for various ventures. However, maintaining operations takes up a lot of time and
+					resources. That is why I ask for charitable contributions to cover costs and keep me motivated. If you enjoy
+					my work, please consider donating. I am legally required to offer something in return for your support when
+					using{' '}
+					<Link
+						href="https://support.stripe.com/questions/requirements-for-accepting-tips-or-donations"
+						target="_blank"
+						className="link link-primary"
 					>
-						<div className="flex item-center w-full">
-							<input
-								ref={amount}
-								type="text"
-								placeholder="Amount"
-								defaultValue="10"
-								className="input input-bordered input-primary border-r-0 rounded-r-none w-full"
-								onInput={(event) => {
-									const matched = event.currentTarget.value.match(/[1-9]\d{0,5}\.(\d{0,2})?|[1-9]\d{0,5}|0\.\d{0,2}|0/);
-									if (!matched) {
-										event.currentTarget.value = '';
-										setDonateEnabled(false);
-										return;
-									}
-									event.currentTarget.value = matched[0];
-									if (event.currentTarget.value.match(/^([1-9]\d{0,5}|\d{1,6}\.\d{1,2})$/)) setDonateEnabled(true);
-									else setDonateEnabled(false);
-								}}
-								disabled={amountEnabled ? false : true}
-							/>
-							<div
-								className={
-									'w-1 border-y-[1px] input-primary' +
-									(!amountEnabled ? ' border-none bg-[#262b36] cursor-not-allowed' : '')
-								}
-							/>
-							{userCurrency && (
-								<select
-									title="Currency"
-									ref={currency}
-									className="select max-w-xs input-primary border-l-0 rounded-l-none focus:border-l-0 focus:outline focus:outline-2 focus:outline-primary focus:outline-offset-2 uppercase"
-									disabled={amountEnabled ? false : true}
-									defaultValue={userCurrency}
-								>
-									{currencies.map((currency, index) => (
-										<option key={index}>{currency.currency}</option>
-									))}
-								</select>
-							)}
-						</div>
-						<button
-							className={
-								'btn btn-primary transition-all duration-200' +
-								(!donateEnabled && ' btn-disabled') +
-								(donateLoading ? ' btn-disabled w-12' : ' w-20')
-							}
-							onClick={donateOrBack}
-						>
-							{donateLoading ? <div className="spinner"></div> : paymentText}
-						</button>
-					</motion.div>
-					<AnimatePresence mode="wait">
-						{clientSecret && (
-							<Elements options={options} stripe={stripePromise}>
-								<CheckoutForm paymentLoaded={paymentLoaded} showPopup={showPopup} />
-							</Elements>
-						)}
-					</AnimatePresence>
-				</div>
+						Stripe
+					</Link>
+					, so I provide access to the source code. Thank you for your help and encouragement!
+				</Description>
 				<motion.div
-					initial={{ y: 100, opacity: 0, filter: 'blur(10px)' }}
-					ref={popupElement}
-					className={classNames(
-						'alert shadow-lg overflow-hidden absolute w-[95%] left-[50%] -translate-x-new-half bottom-10',
-						{
-							hidden: !error,
-							'alert-success shadow-green-400': error?.success,
-							'alert-error shadow-red-400': !error?.success,
+					variants={{
+						hidden: {
+							opacity: 0,
+							x: 50,
+							filter: 'blur(10px)',
 						},
-					)}
+						show: {
+							opacity: 1,
+							x: 0,
+							filter: 'blur(0px)',
+							transition: {
+								duration: 0.5,
+								ease: 'easeOut',
+							},
+						},
+					}}
+					className="flex flex-row gap-4 w-full"
 				>
-					<div className="flex flex-col items-center justify-center w-full text-lg font-bold">
-						<div
-							className={
-								'uppercase flex flex-row items-center justify-center gap-2' + (error?.success ? ' hidden' : '')
-							}
-						>
-							{error?.isClient ? <FaDesktop /> : <FaServer />}
-							{error?.isClient ? 'client' : 'server'} error
-							<FaRegTimesCircle />
-						</div>
-						<span>{error?.message}</span>
+					<div className="flex item-center w-full join">
+						<input
+							ref={amount}
+							type="text"
+							placeholder="Amount"
+							defaultValue="10"
+							className="input input-bordered input-primary w-full join-item"
+							onInput={(event) => {
+								const matched = event.currentTarget.value.match(/[1-9]\d{0,5}\.(\d{0,2})?|[1-9]\d{0,5}|0\.\d{0,2}|0/);
+								if (!matched) {
+									event.currentTarget.value = '';
+									setDonateEnabled(false);
+									return;
+								}
+								event.currentTarget.value = matched[0];
+								if (event.currentTarget.value.match(/^([1-9]\d{0,5}|\d{1,6}\.\d{1,2})$/)) setDonateEnabled(true);
+								else setDonateEnabled(false);
+							}}
+							disabled={amountEnabled ? false : true}
+						/>
+						{userCurrency && (
+							<select
+								title="Currency"
+								ref={currency}
+								className="select max-w-xs input-primary uppercase  join-item"
+								disabled={amountEnabled ? false : true}
+								defaultValue={userCurrency}
+							>
+								{currencies.map((currency, index) => (
+									<option key={index}>{currency.currency}</option>
+								))}
+							</select>
+						)}
 					</div>
+					<button
+						className={
+							'btn btn-primary transition-all duration-200' +
+							(!donateEnabled && ' btn-disabled') +
+							(donateLoading ? ' btn-disabled w-12' : ' w-20')
+						}
+						onClick={donateOrBack}
+					>
+						{donateLoading ? <div className="spinner"></div> : paymentText}
+					</button>
 				</motion.div>
+				<AnimatePresence mode="wait">
+					{clientSecret && (
+						<Elements options={options} stripe={stripePromise}>
+							<CheckoutForm paymentLoaded={paymentLoaded} showPopup={showPopup} />
+						</Elements>
+					)}
+				</AnimatePresence>
+			</div>
+			<motion.div
+				initial={{ y: 100, opacity: 0, filter: 'blur(10px)' }}
+				ref={popupElement}
+				className={classNames(
+					'alert shadow-lg overflow-hidden absolute w-[95%] left-[50%] -translate-x-new-half bottom-10 flex flex-row justify-center',
+					{
+						hidden: !error,
+						'alert-success shadow-green-400': error?.success,
+						'alert-error shadow-red-400': !error?.success,
+					},
+				)}
+			>
+				<div className="flex flex-col items-center justify-center text-lg font-bold">
+					<div
+						className={'uppercase flex flex-row items-center justify-center gap-2' + (error?.success ? ' hidden' : '')}
+					>
+						{error?.isClient ? <FaDesktop /> : <FaServer />}
+						{error?.isClient ? 'client' : 'server'} error
+						<FaRegTimesCircle />
+					</div>
+					<span>{error?.message}</span>
+				</div>
 			</motion.div>
-		</>
+		</motion.div>
 	);
 }

@@ -1,3 +1,5 @@
+'use client';
+
 import { LinkAuthenticationElement, PaymentElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
