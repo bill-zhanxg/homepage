@@ -196,7 +196,7 @@ export function Donation() {
 					<Link
 						href="https://support.stripe.com/questions/requirements-for-accepting-tips-or-donations"
 						target="_blank"
-						className="link link-primary"
+						className="link link-secondary"
 					>
 						Stripe
 					</Link>

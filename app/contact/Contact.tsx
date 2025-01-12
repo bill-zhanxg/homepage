@@ -104,7 +104,7 @@ export function Contact({
 							>
 								<div className="flex items-center space-x-2">
 									<LuMail className="text-primary h-4 w-4" />
-									<a href="mailto:contact@mail.bill-zhanxg.com" className="link link-primary">
+									<a href="mailto:contact@mail.bill-zhanxg.com" className="link link-secondary">
 										contact@mail.bill-zhanxg.com
 									</a>
 								</div>

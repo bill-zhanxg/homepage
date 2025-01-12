@@ -84,7 +84,7 @@ export function HomePage() {
 								<Link
 									href="https://github.com/Microsoft/microsoft-ui-xaml"
 									target="_blank"
-									className="link link-primary"
+									className="link link-secondary"
 								>
 									WinUI 3
 								</Link>{' '}
@@ -92,7 +92,7 @@ export function HomePage() {
 								<Link
 									href="https://developer.microsoft.com/en-us/fluentui/"
 									target="_blank"
-									className="link link-primary"
+									className="link link-secondary"
 								>
 									Fluent Design
 								</Link>
