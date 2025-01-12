@@ -6,5 +6,6 @@ namespace NodeJS {
 		STRIPE_WEBHOOK_ENDPOINT_SECRET: string;
 		ERROR_LOGGER_WEBHOOK: string;
 		STRIPE_PAYMENT_WEBHOOK: string;
+		RESEND_API_KEY: string;
 	}
 }
