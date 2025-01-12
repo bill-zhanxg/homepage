@@ -25,7 +25,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 	}, []);
 
 	return (
-		<motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 0.3 }} className="h-full">
+		<motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 0.3 }}>
 			<div className="drawer lg:drawer-open">
 				<input id="nav-side-bar" ref={navBar} type="checkbox" className="drawer-toggle" />
 				<div ref={pageContent} className="drawer-content">
