@@ -11,7 +11,7 @@ export default function Page() {
 			const message = formData.get('message');
 
 			// Validate the input
-			if (!name || !email || !message) {
+			if (typeof name !== 'string' || typeof email !== 'string' || typeof message !== 'string') {
 				return { type: 'error', message: 'Please fill out all fields' };
 			}
 
@@ -19,6 +19,7 @@ export default function Page() {
 			const { data, error } = await resend.emails.send({
 				from: `Contact Form <${resendFrom}>`,
 				to: 'contact@mail.bill-zhanxg.com',
+				replyTo: email,
 				subject: 'New Website Request',
 				text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
 				html: `<strong>Name:</strong> ${name}<br>
