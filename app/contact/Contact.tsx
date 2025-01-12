@@ -57,7 +57,7 @@ export function Contact({
 							Request a Website
 						</motion.h3>
 						<motion.p className="text-base-content/70 mb-6 text-sm" variants={itemVariants}>
-							Looking for a stunning website? I'm here to help! Fill out the form below or reach out via email.
+							Looking for a stunning website? I&apos;m here to help! Fill out the form below or reach out via email.
 						</motion.p>
 						<motion.form className="space-y-4" variants={containerVariants} action={formAction}>
 							<motion.div className="form-control" variants={itemVariants}>
