@@ -136,6 +136,7 @@ export function HomePage() {
 						<p>• Minecraft Java Plugin / Mod</p>
 						<p>• Minecraft Bedrock Behavior Pack</p>
 						<p>• MySQL</p>
+						<p>• Postgresql</p>
 						<br />
 						<p>• Bash</p>
 						<p>• Powershell</p>
@@ -154,12 +155,10 @@ export function HomePage() {
 				<Paragraph1>
 					<h2 className="text-2xl">🏆 Talents</h2>
 					<div className="pl-6">
-						<p>• 🎹 Piano Grade 8</p>
+						<p>• 🎹 Piano Diploma</p>
 						<p>• 🗄️ IT, Server Management</p>
 						<p>• 📐 Problem Solver</p>
 						<p>• 🎨 Learning designing / Colors</p>
-						<p>• 🅰 Can&apos;t English well</p>
-						<p>• 📘 Nerd</p>
 					</div>
 				</Paragraph1>
 				<Paragraph2>
