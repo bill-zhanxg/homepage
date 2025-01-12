@@ -40,6 +40,36 @@ export function HomePage() {
 					Server developer. I am known online as <b>Bill.IHCha</b>, <b>Bill.zhanxg</b>, <b>Bill-zhanxg</b>. People
 					usually just call me <b>Bill</b>.
 				</Description>
+				<motion.div
+					variants={{
+						hidden: { opacity: 0, y: 20 },
+						visible: {
+							opacity: 1,
+							y: 0,
+							transition: {
+								delay: 1,
+								duration: 0.5,
+								ease: 'easeOut',
+							},
+						},
+						hover: {
+							scale: 1.05,
+							transition: {
+								duration: 0.2,
+								ease: 'easeInOut',
+							},
+						},
+						tap: { scale: 0.95 },
+					}}
+					initial="hidden"
+					animate="visible"
+					whileHover="hover"
+					whileTap="tap"
+				>
+					<Link href="/contact" className="btn btn-primary mt-4">
+						Contact Me
+					</Link>
+				</motion.div>
 			</div>
 			<Paragraph>
 				<Paragraph1>
