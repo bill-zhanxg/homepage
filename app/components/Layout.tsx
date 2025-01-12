@@ -26,9 +26,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
 	return (
 		<motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 0.3 }} className="h-full">
-			<div className="drawer lg:drawer-open h-full">
+			<div className="drawer lg:drawer-open">
 				<input id="nav-side-bar" ref={navBar} type="checkbox" className="drawer-toggle" />
-				<div ref={pageContent} className="drawer-content h-full">
+				<div ref={pageContent} className="drawer-content">
 					<label
 						htmlFor="nav-side-bar"
 						className="btn rounded-none rounded-br-lg drawer-button hover:text-primary fixed lg:hidden z-50"
@@ -37,7 +37,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 					</label>
 					<AnimatePresence mode="wait">{children}</AnimatePresence>
 				</div>
-				<div className="drawer-side z-50">
+				<div className="drawer-side z-50 fixed">
 					<label htmlFor="nav-side-bar" aria-label="close sidebar" className="drawer-overlay"></label>
 					<motion.ul
 						variants={{
