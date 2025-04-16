@@ -3,8 +3,8 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import type { Metadata, Viewport } from 'next';
 import Dog from '../images/dog.jpg';
 import BarOfProgress from './components/BarOfProgress';
-
 import { Layout } from './components/Layout';
+
 import './globals.css';
 
 export const metadata: Metadata = {

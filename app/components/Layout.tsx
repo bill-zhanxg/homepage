@@ -99,6 +99,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 						<NavBarItem hideNavBar={hideNavBar} url="/discord" text="Discord" />
 						<NavBarItem hideNavBar={hideNavBar} url="/donation" text="Donation" />
 						<NavBarItem hideNavBar={hideNavBar} url="/subscription" text="Subscription" />
+						<NavBarItem hideNavBar={hideNavBar} url="https://blog.bill-zhanxg.com" text="Blog" newTab />
 						<NavBarItem
 							hideNavBar={hideNavBar}
 							url="https://stats.uptimerobot.com/2lnqqFKpD9"
