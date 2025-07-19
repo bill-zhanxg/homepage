@@ -9,14 +9,7 @@ import { Alert, AlertType } from '../globalComponents/Alert';
 
 const itemVariants = {
 	hidden: { y: 20, opacity: 0 },
-	visible: {
-		y: 0,
-		opacity: 1,
-		transition: {
-			type: 'spring',
-			stiffness: 100,
-		},
-	},
+	visible: { y: 0, opacity: 1, transition: { type: 'spring', stiffness: 100 } },
 };
 
 export function Contact({
@@ -28,13 +21,7 @@ export function Contact({
 
 	const containerVariants = {
 		hidden: { opacity: 0 },
-		visible: {
-			opacity: 1,
-			transition: {
-				staggerChildren: 0.1,
-				delayChildren: 0.3,
-			},
-		},
+		visible: { opacity: 1, transition: { staggerChildren: 0.1, delayChildren: 0.3 } },
 	};
 
 	return (
@@ -56,8 +43,12 @@ export function Contact({
 						<motion.h3 className="card-title text-xl mb-4" variants={itemVariants}>
 							Request a Website
 						</motion.h3>
-						<motion.p className="text-base-content/70 mb-6 text-sm" variants={itemVariants}>
-							Looking for a stunning website? I&apos;m here to help! Fill out the form below or reach out via email.
+						<motion.p className="text-base-content/70 text-sm" variants={itemVariants}>
+							Looking for a stunning website or SaaS? I&apos;m here to help! Fill out the form below or reach out via
+							email.
+						</motion.p>
+						<motion.p className="text-base-content/70 mb-2 text-sm italic" variants={itemVariants}>
+							Note: This contact form is for project inquiries only — no sales pitches or promotional messages, please.
 						</motion.p>
 						<motion.form className="space-y-4" variants={containerVariants} action={formAction}>
 							<motion.div className="form-control" variants={itemVariants}>
@@ -173,15 +164,7 @@ function SubmitButton() {
 function SocialLink({ href, Icon, label }: { href: string; Icon: IconType; label: string }) {
 	const socialVariants = {
 		hidden: { scale: 0, rotate: -180 },
-		visible: {
-			scale: 1,
-			rotate: 0,
-			transition: {
-				type: 'spring',
-				stiffness: 200,
-				damping: 15,
-			},
-		},
+		visible: { scale: 1, rotate: 0, transition: { type: 'spring', stiffness: 200, damping: 15 } },
 	};
 
 	return (
