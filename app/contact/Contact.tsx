@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 import { useActionState } from 'react';
 import { useFormStatus } from 'react-dom';
 import { IconType } from 'react-icons';
@@ -10,7 +10,7 @@ import { Alert, AlertType } from '../globalComponents/Alert';
 const itemVariants = {
 	hidden: { y: 20, opacity: 0 },
 	visible: { y: 0, opacity: 1, transition: { type: 'spring', stiffness: 100 } },
-};
+} satisfies Variants;
 
 export function Contact({
 	contactFormAction,
@@ -165,7 +165,7 @@ function SocialLink({ href, Icon, label }: { href: string; Icon: IconType; label
 	const socialVariants = {
 		hidden: { scale: 0, rotate: -180 },
 		visible: { scale: 1, rotate: 0, transition: { type: 'spring', stiffness: 200, damping: 15 } },
-	};
+	} satisfies Variants;
 
 	return (
 		<motion.a
