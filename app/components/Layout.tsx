@@ -52,15 +52,15 @@ export function Layout({ children }: { children: React.ReactNode }) {
 						animate="show"
 						className="menu p-2 w-64 min-h-full bg-base-200 text-base-content"
 					>
-						<motion.div className="py-4 flex items-center gap-4">
+						<motion.div className="py-4 flex items-center justify-center gap-4">
 							<motion.div
 								initial={{ opacity: 0 }}
 								animate={{ opacity: 1 }}
 								transition={{ delay: 0.3, duration: 0.5 }}
 								className="avatar"
 							>
-								<div className="w-24 rounded-full">
-									<Image priority src={Dog} alt="Dog" width={1000} height={1000} />
+								<div className="w-20 rounded-full">
+									<Image priority src={Dog} alt="Dog" width={500} height={500} />
 								</div>
 							</motion.div>
 							<motion.div
