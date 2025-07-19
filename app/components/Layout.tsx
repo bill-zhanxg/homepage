@@ -85,10 +85,10 @@ export function Layout({ children }: { children: React.ReactNode }) {
 									Bill.IHCha
 								</motion.h1>
 								<div className="flex justify-between">
-									<ConnectionIcon Icon={FaGithub} url="https://github.com/bill-zhanxg" />
-									<ConnectionIcon Icon={FaYoutube} url="https://www.youtube.com/@bill.zhanxg" />
-									<ConnectionIcon Icon={FaDiscord} url="https://discord.gg/Xx8EaRzC33" />
-									<ConnectionIcon Icon={GrMail} url="mailto:contact@mail.bill-zhanxg.com" />
+									<ConnectionIcon Icon={FaGithub} url="https://github.com/bill-zhanxg" ariaLabel="GitHub" />
+									<ConnectionIcon Icon={FaYoutube} url="https://www.youtube.com/@bill.zhanxg" ariaLabel="YouTube" />
+									<ConnectionIcon Icon={FaDiscord} url="https://discord.gg/Xx8EaRzC33" ariaLabel="Discord" />
+									<ConnectionIcon Icon={GrMail} url="mailto:contact@mail.bill-zhanxg.com" ariaLabel="Email" />
 								</div>
 							</motion.div>
 						</motion.div>
