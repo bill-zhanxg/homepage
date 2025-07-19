@@ -41,15 +41,13 @@ export function Projects() {
 					website="https://onlinesafety.co.in/"
 					title="Online Safety"
 					description="This website is constructed all by myself for the company, with Nextjs App directory, Tailwindcss, DaisyUI, and Auth.js. (Under development)"
-					isNew
 				/>
 				<Card
 					image={CSEN}
 					imageText="CSEN"
 					github="https://github.com/bill-zhanxg/ccs-sport"
-					title="CCS Sport"
-					description="Something that I'm currently working on. 🤫!"
-					isNew
+					title="CSEN Sport"
+					description="A sport fixture management system originally developed for the Christian Schools Events Network (CSEN). It allows the organisations, teachers and students to create, manage, and view sports fixtures and results."
 				/>
 				<Card
 					image={BloodLust}
