@@ -60,7 +60,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 								className="avatar"
 							>
 								<div className="w-20 rounded-full">
-									<Image priority src={Dog} alt="Dog" width={640} height={640} />
+									<Image priority src={Dog} alt="Dog" width={107} height={107} />
 								</div>
 							</motion.div>
 							<motion.div
