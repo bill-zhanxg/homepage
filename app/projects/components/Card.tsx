@@ -62,11 +62,11 @@ export function Card({
 				<p>{description}</p>
 				{connection ? (
 					<div className="card-actions justify-end">
-						{website ? <ConnectionIcon Icon={BsGlobe2} url={website} /> : null}
-						{youtube ? <ConnectionIcon Icon={FaYoutube} url={youtube} /> : null}
-						{discord ? <ConnectionIcon Icon={FaDiscord} url={discord} /> : null}
-						{github ? <ConnectionIcon Icon={FaGithub} url={github} /> : null}
-						{npm ? <ConnectionIcon Icon={FaNpm} url={npm} /> : null}
+						{website ? <ConnectionIcon Icon={BsGlobe2} url={website} ariaLabel="Website" /> : null}
+						{youtube ? <ConnectionIcon Icon={FaYoutube} url={youtube} ariaLabel="YouTube" /> : null}
+						{discord ? <ConnectionIcon Icon={FaDiscord} url={discord} ariaLabel="Discord" /> : null}
+						{github ? <ConnectionIcon Icon={FaGithub} url={github} ariaLabel="GitHub" /> : null}
+						{npm ? <ConnectionIcon Icon={FaNpm} url={npm} ariaLabel="NPM" /> : null}
 					</div>
 				) : null}
 			</div>
