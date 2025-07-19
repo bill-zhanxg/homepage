@@ -96,6 +96,10 @@
 	translate: -50%;
 }
 
+@utility btn {
+	@apply rounded-lg;
+}
+
 @layer base {
 	body {
 		@apply font-[Sen] text-[#DCDFE4];
