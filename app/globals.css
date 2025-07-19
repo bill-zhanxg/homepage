@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Sen&display=swap') layer(base);
-
 @import 'tailwindcss';
 @plugin "daisyui";
 
@@ -102,7 +100,8 @@
 
 @layer base {
 	body {
-		@apply font-[Sen] text-[#DCDFE4];
+		@apply font-sans text-[#DCDFE4];
+		font-family: var(--font-sen);
 	}
 
 	::-webkit-scrollbar {

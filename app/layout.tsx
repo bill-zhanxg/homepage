@@ -1,11 +1,19 @@
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import type { Metadata, Viewport } from 'next';
+import { Sen } from 'next/font/google';
 import Dog from '../images/dog.jpg';
 import BarOfProgress from './components/BarOfProgress';
 import { Layout } from './components/Layout';
 
 import './globals.css';
+
+const sen = Sen({
+	subsets: ['latin'],
+	weight: ['400'],
+	display: 'swap',
+	variable: '--font-sen',
+});
 
 export const metadata: Metadata = {
 	title: {
@@ -35,7 +43,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
 	return (
-		<html lang="en">
+		<html lang="en" className={sen.variable}>
 			<body>
 				<Layout>{children}</Layout>
 
