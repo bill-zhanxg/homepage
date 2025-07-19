@@ -106,8 +106,8 @@ export function HomePage() {
 					</div>
 				</Paragraph1>
 				<Paragraph2>
-					<HomeImage src={AusFlag} />
-					<HomeImage src={Win11Wallpaper} />
+					<HomeImage src={AusFlag} alt="Australian Flag" />
+					<HomeImage src={Win11Wallpaper} alt="Windows 11 Wallpaper" />
 				</Paragraph2>
 			</Paragraph>
 			<Paragraph>
@@ -147,8 +147,8 @@ export function HomePage() {
 					</div>
 				</Paragraph1>
 				<Paragraph2>
-					<HomeImage src={Discord} />
-					<HomeImage src={Unity} />
+					<HomeImage src={Discord} alt="Discord Application" />
+					<HomeImage src={Unity} alt="Unity Game Engine" />
 				</Paragraph2>
 			</Paragraph>
 			<Paragraph setIsAnimating={setIsAnimating}>
@@ -162,8 +162,8 @@ export function HomePage() {
 					</div>
 				</Paragraph1>
 				<Paragraph2>
-					<HomeImage src={Piano} />
-					<HomeImage src={Colors} />
+					<HomeImage src={Piano} alt="Piano Keyboard" />
+					<HomeImage src={Colors} alt="Color Palette" />
 				</Paragraph2>
 			</Paragraph>
 		</motion.div>
