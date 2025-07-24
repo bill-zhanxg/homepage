@@ -2,6 +2,10 @@ import { resend, resendFrom } from '@/libs/resend';
 import { AlertType } from '../globalComponents/Alert';
 import { Contact } from './Contact';
 
+export const metadata = {
+	title: 'Contacts',
+};
+
 export default function Page() {
 	async function contactFormAction(prevState: AlertType, formData: FormData): Promise<AlertType> {
 		'use server';
