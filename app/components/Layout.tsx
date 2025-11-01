@@ -37,7 +37,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 					</label>
 					<AnimatePresence mode="wait">{children}</AnimatePresence>
 				</div>
-				<div className="drawer-side z-50 fixed">
+				<div className="drawer-side z-50">
 					<label htmlFor="nav-side-bar" aria-label="close sidebar" className="drawer-overlay"></label>
 					<motion.ul
 						variants={{
