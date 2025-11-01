@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import Image, { StaticImageData } from 'next/image';
 import { BsGlobe2 } from 'react-icons/bs';
 import { FaDiscord, FaGithub, FaNpm, FaYoutube } from 'react-icons/fa';

@@ -1,5 +1,5 @@
 'use client';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import { FaDesktop } from 'react-icons/fa';
 
 export default function Error({ error, reset }: { error: Error & { digest?: string }; reset: () => void }) {

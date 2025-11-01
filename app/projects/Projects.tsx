@@ -23,7 +23,7 @@ import SpaceInvaders from '@/images/projects/space-invaders.jpg';
 import StartUpProgramControl from '@/images/projects/startup-program-control.png';
 import Stob from '@/images/projects/stob.jpg';
 import TokenGrabber from '@/images/projects/token-grabber.jpg';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import Title from '../globalComponents/Title';
 import { Card } from './components/Card';
 import CardParent from './components/CardParent';

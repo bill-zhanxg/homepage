@@ -4,7 +4,7 @@ import { default as currencies } from '@/libs/currencies.json';
 import { Elements } from '@stripe/react-stripe-js';
 import { StripeElementsOptions } from '@stripe/stripe-js';
 import classNames from 'classnames';
-import { AnimatePresence, motion, useAnimate } from 'framer-motion';
+import { AnimatePresence, motion, useAnimate } from 'motion/react';
 import Link from 'next/link';
 import { useRouter } from 'next13-progressbar';
 import { useCallback, useEffect, useRef, useState } from 'react';

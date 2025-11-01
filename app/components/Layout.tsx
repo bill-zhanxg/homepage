@@ -1,6 +1,6 @@
 'use client';
 import Dog from '@/images/dog.jpg';
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'motion/react';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { useCallback, useEffect, useRef } from 'react';
