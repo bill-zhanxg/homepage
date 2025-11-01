@@ -3,12 +3,6 @@ import type { NextApiRequest } from 'next';
 import handleServerError from '@/libs/handleServerError';
 import { stripe } from '@/libs/stripe';
 
-export const config = {
-	api: {
-		bodyParser: false,
-	},
-};
-
 function buffer(req: NextApiRequest) {
 	return new Promise<Buffer>((resolve, reject) => {
 		let chunks: Uint8Array[] = [];
