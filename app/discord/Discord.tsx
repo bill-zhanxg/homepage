@@ -8,7 +8,7 @@ export function Discord() {
 	const WidgetBot = dynamic(() => import('@widgetbot/react-embed'), { ssr: false });
 
 	return (
-		<motion.div exit={{ y: -10, opacity: 0 }} className="pt-12 pb-6 p-2 sm:pt-12 md:p-10 lg:p-14 h-[100vh]">
+		<motion.div exit={{ y: -10, opacity: 0 }} className="pt-12 pb-6 p-2 sm:pt-12 md:p-10 lg:p-14 h-screen">
 			<div className="flex flex-col items-center text-center gap-2 h-full">
 				<Title>Preview my Discord Server</Title>
 				<motion.div

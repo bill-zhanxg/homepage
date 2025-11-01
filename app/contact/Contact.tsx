@@ -26,14 +26,14 @@ export function Contact({
 
 	return (
 		<motion.section
-			className="py-8 px-4 md:px-6 lg:px-8 bg-gradient-to-br from-base-200 to-base-300 min-h-screen flex items-center justify-center"
+			className="py-8 px-4 md:px-6 lg:px-8 bg-linear-to-br from-base-200 to-base-300 min-h-screen flex items-center justify-center"
 			variants={containerVariants}
 			initial="hidden"
 			animate="visible"
 		>
 			<motion.div className="max-w-3xl w-full" variants={itemVariants}>
 				<motion.h2
-					className="text-3xl font-bold text-center mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary"
+					className="text-3xl font-bold text-center mb-6 bg-clip-text text-transparent bg-linear-to-r from-primary to-secondary"
 					variants={itemVariants}
 				>
 					Get in Touch
