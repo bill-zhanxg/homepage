@@ -99,7 +99,7 @@ export function HomePage() {
 								&#41;
 							</span>
 						</p>
-						<p>• 🎨 I can code stuffs, fine at designing :&#41;</p>
+						<p>• 🎨 I can code stuff, fine at designing :&#41;</p>
 						<p>
 							• 📘 Good at math <span className="font-sans">&#58;&#68;</span>
 						</p>
