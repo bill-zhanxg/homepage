@@ -1,4 +1,5 @@
 import { resend, resendFrom } from '@/libs/resend';
+import { containsBlacklistedContent } from '@/libs/blacklist';
 import { AlertType } from '../globalComponents/Alert';
 import { Contact } from './Contact';
 
@@ -17,6 +18,11 @@ export default function Page() {
 			// Validate the input
 			if (typeof name !== 'string' || typeof email !== 'string' || typeof message !== 'string') {
 				return { type: 'error', message: 'Please fill out all fields' };
+			}
+
+			// Check for blacklisted content
+			if (containsBlacklistedContent(message) || containsBlacklistedContent(name)) {
+				return { type: 'error', message: 'Your message contains prohibited content. Please revise and try again. (Remember no self-promotion or spam)' };
 			}
 
 			// Send the email
