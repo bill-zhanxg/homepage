@@ -40,7 +40,7 @@ export function Projects() {
 					imageText="Online Safety"
 					website="https://onlinesafety.co.in/"
 					title="Online Safety"
-					description="This website is constructed all by myself for the company, with Nextjs App directory, Tailwindcss, DaisyUI, and Auth.js. (Under development)"
+					description="This website is constructed all by myself for the company, with Nextjs App directory, Tailwindcss, DaisyUI, and Auth.js."
 				/>
 				<Card
 					image={CSEN}
