@@ -77,28 +77,6 @@ export function HomePage() {
 					<div className="pl-6">
 						<p>• 🌐 I&apos;m currently living in Australia</p>
 						<p>• 💻 I&apos;m a student that likes to code</p>
-						<p className="flex gap-2">
-							• <FaMicrosoft className="pt-1" />
-							<span>
-								Love the new Microsoft design &#40;
-								<Link
-									href="https://github.com/Microsoft/microsoft-ui-xaml"
-									target="_blank"
-									className="link link-secondary"
-								>
-									WinUI 3
-								</Link>{' '}
-								/{' '}
-								<Link
-									href="https://developer.microsoft.com/en-us/fluentui/"
-									target="_blank"
-									className="link link-secondary"
-								>
-									Fluent Design
-								</Link>
-								&#41;
-							</span>
-						</p>
 						<p>• 🎨 I can code stuff, fine at designing :&#41;</p>
 						<p>
 							• 📘 Good at math <span className="font-sans">&#58;&#68;</span>
