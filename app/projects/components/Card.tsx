@@ -11,6 +11,7 @@ export function Card({
 	title,
 	description,
 	isNew = false,
+	isDeprecated = false,
 	website,
 	youtube,
 	discord,
@@ -22,6 +23,7 @@ export function Card({
 	title: string;
 	description: string;
 	isNew?: boolean;
+	isDeprecated?: boolean;
 	website?: string;
 	youtube?: string;
 	discord?: string;
@@ -55,9 +57,12 @@ export function Card({
 				<Image src={image} alt={imageText} width={0} height={0} className="h-40 w-64 object-cover" />
 			</figure>
 			<div className="card-body">
-				<h2 className="card-title">
-					{title}
-					{isNew ? <div className="badge-secondary badge">NEW</div> : null}
+				<h2 className="card-title flex flex-col items-start gap-2">
+					<span>{title}</span>
+					<div className="flex flex-wrap gap-2">
+						{isNew ? <div className="badge-secondary badge">NEW</div> : null}
+						{isDeprecated ? <div className="badge-error badge">DEPRECATED</div> : null}
+					</div>
 				</h2>
 				<p>{description}</p>
 				{connection ? (

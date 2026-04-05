@@ -1,5 +1,7 @@
 'use client';
 
+import { motion } from 'motion/react';
+
 import Asylum from '@/images/projects/asylum.gif';
 import BloodLust from '@/images/projects/bloodlust.png';
 import ChromeTRex from '@/images/projects/chrome-t-rex.jpg';
@@ -23,7 +25,7 @@ import SpaceInvaders from '@/images/projects/space-invaders.jpg';
 import StartUpProgramControl from '@/images/projects/startup-program-control.png';
 import Stob from '@/images/projects/stob.jpg';
 import TokenGrabber from '@/images/projects/token-grabber.jpg';
-import { motion } from 'motion/react';
+
 import Title from '../globalComponents/Title';
 import { Card } from './components/Card';
 import CardParent from './components/CardParent';
@@ -36,6 +38,7 @@ export function Projects() {
 			</div>
 			<CardParent>
 				<Card
+					isDeprecated
 					image={OnlineSafety}
 					imageText="Online Safety"
 					website="https://onlinesafety.co.in/"
@@ -45,11 +48,11 @@ export function Projects() {
 				<Card
 					image={CSEN}
 					imageText="CSEN"
-					github="https://github.com/bill-zhanxg/ccs-sport"
-					title="CSEN Sport"
+					title="CSEN Sport (Privated and Copyrighted)"
 					description="A sport fixture management system originally developed for the Christian Schools Events Network (CSEN). It allows the organisations, teachers and students to create, manage, and view sports fixtures and results."
 				/>
 				<Card
+					isDeprecated
 					image={BloodLust}
 					imageText="BloodLust"
 					youtube="https://www.youtube.com/@bloodlust7777"
@@ -126,6 +129,7 @@ export function Projects() {
 					description="This program is designed for teachers to keep track of scores for each player (Goal Attack, Goal Shooter) and round in a netball game. It is intended to replace the Netball score sheet used by the Christian Schools Events Network."
 				/>
 				<Card
+					isDeprecated
 					image={MCPECracker}
 					imageText="MCPE Cracker"
 					github="https://github.com/bill-zhanxg/mcpe-cracker"
@@ -162,6 +166,7 @@ export function Projects() {
 					description="Play my version of Space Invaders for a school project. Defend your planet against an alien invasion in classic or modern mode."
 				/>
 				<Card
+					isDeprecated
 					image={Stob}
 					imageText="Stob"
 					youtube="https://youtu.be/NeDygGxIZuo"
@@ -171,6 +176,7 @@ export function Projects() {
 					description="Stob is a Discord bot that have almost everything. Music, Moderation and Funny Stuff."
 				/>
 				<Card
+					isDeprecated
 					image={Asylum}
 					imageText="Asylum"
 					youtube="https://www.youtube.com/@asylum8237"

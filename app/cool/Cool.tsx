@@ -111,7 +111,6 @@ export function Cool() {
 				<Card
 					image={Windows11}
 					imageText="Windows 11"
-					isNew
 					website="https://www.microsoft.com/en-au/windows/windows-11"
 					youtube="https://www.youtube.com/@MicrosoftWindows"
 					title="Windows 11"
@@ -142,13 +141,6 @@ export function Cool() {
 					description="Visual Studio Code is a versatile source code editor for Windows, macOS, and Linux with extensive language support and extensions."
 				/>
 				<Card
-					image={GitHubCopilot}
-					imageText="GitHub Copilot"
-					website="https://github.com/features/copilot"
-					title="GitHub Copilot"
-					description="GitHub Copilot is an AI-powered code completion tool that helps you write code faster."
-				/>
-				<Card
 					image={WinUI}
 					imageText="WinUI"
 					website="https://microsoft.github.io/microsoft-ui-xaml/"
@@ -172,15 +164,6 @@ export function Cool() {
 					github="https://github.com/tauri-apps/tauri"
 					title="Tauri"
 					description="Tauri is a framework for building cross-platform desktop applications with web technologies and Rust."
-				/>
-				<Card
-					image={MeiliSearch}
-					imageText="MeiliSearch"
-					website="https://www.meilisearch.com/"
-					discord="https://discord.com/invite/meilisearch"
-					github="https://github.com/meilisearch/meilisearch"
-					title="MeiliSearch"
-					description="MeiliSearch is a powerful, fast, open-source, easy to use and deploy search engine."
 				/>
 				<Card
 					image={Discordjs}
@@ -243,13 +226,13 @@ export function Cool() {
 				/>
 				<Card
 					image={Typescript}
-					imageText="Typescript"
+					imageText="TypeScript"
 					website="https://www.typescriptlang.org/"
 					discord="https://discord.com/invite/typescript"
 					github="https://github.com/Microsoft/TypeScript"
 					npm="https://www.npmjs.com/package/typescript"
-					title="Typescript"
-					description="TypeScript is an object-oriented, strongly-typed superset of JavaScript designed for large-scale applications that transpiles to JavaScript. All Javascript developers should use Typescript."
+					title="TypeScript"
+					description="TypeScript is an object-oriented, strongly-typed superset of JavaScript designed for large-scale applications that transpiles to JavaScript. All JavaScript developers should use TypeScript."
 				/>
 				<Card
 					image={Unity}
@@ -286,14 +269,7 @@ export function Cool() {
 					discord="https://discord.gg/zyqZWr2"
 					github="https://github.com/widgetbot-io"
 					title="WidgetBot"
-					description="WidgetBot is an open-source javascript widget and Discord bot that lets website guests see and reply to messages from a Discord server in real-time on the website, without needing a Discord account."
-				/>
-				<Card
-					image={GDash}
-					imageText="3Dash"
-					website="https://3dash.xyz/"
-					title="3Dash"
-					description="Geometry Dash but 3D."
+					description="WidgetBot is an open-source JavaScript widget and Discord bot that lets website guests see and reply to messages from a Discord server in real time on the website, without needing a Discord account."
 				/>
 				<Card
 					image={PowerToys}
@@ -402,14 +378,6 @@ export function Cool() {
 					description="Big Stretch Reminder is a software that reminds you to take a break and stretch your body with advanced controls."
 				/>
 				<Card
-					image={EarTrumpet}
-					imageText="EarTrumpet"
-					website="https://eartrumpet.app/"
-					github="https://github.com/File-New-Project/EarTrumpet"
-					title="EarTrumpet"
-					description="EarTrumpet is a Windows volume control app that's simple, modern, and powerful."
-				/>
-				<Card
 					image={Rufus}
 					imageText="Rufus"
 					website="https://rufus.ie/"
@@ -440,14 +408,6 @@ export function Cool() {
 					github="https://github.com/Simizfo/WSATools"
 					title="WSATools"
 					description="WSATools is a simple APK installer for Windows 11's Subsystem for Android. It also adds explorer integration for APKs, and you won't have to worry about ADB, since it takes care of everything for you."
-				/>
-				<Card
-					image={ElevenClock}
-					imageText="ElevenClock"
-					website="https://www.marticliment.com/elevenclock/"
-					github="https://github.com/marticliment/ElevenClock"
-					title="ElevenClock"
-					description="ElevenClock is a simple, lightweight, and customizable clock for Windows 11."
 				/>
 			</CardParent>
 		</motion.div>

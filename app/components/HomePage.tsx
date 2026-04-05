@@ -75,8 +75,8 @@ export function HomePage() {
 				<Paragraph1>
 					<h2 className="text-2xl">💫 About Me</h2>
 					<div className="pl-6">
-						<p>• 🌐 I&apos;m currently live in Australia</p>
-						<p>• 💻 I&apos;m a student that like to code</p>
+						<p>• 🌐 I&apos;m currently living in Australia</p>
+						<p>• 💻 I&apos;m a student that likes to code</p>
 						<p className="flex gap-2">
 							• <FaMicrosoft className="pt-1" />
 							<span>
@@ -114,13 +114,13 @@ export function HomePage() {
 				<Paragraph1>
 					<h2 className="text-2xl">💻Tech Stack</h2>
 					<div className="pl-6">
-						<p>• Typescript</p>
-						<p>• Javascript</p>
+						<p>• TypeScript</p>
+						<p>• JavaScript</p>
 						<p>• Rust</p>
 						<p>• Java</p>
 						<p>• C#</p>
 						<p>• C++ &#40;Used it, hated it, but want to learn it better&#41;</p>
-						<p>• Html 5</p>
+						<p>• HTML5</p>
 						<p>• CSS</p>
 						<p>• Visual Basic</p>
 						<br />
@@ -136,10 +136,10 @@ export function HomePage() {
 						<p>• Minecraft Java Plugin / Mod</p>
 						<p>• Minecraft Bedrock Behavior Pack</p>
 						<p>• MySQL</p>
-						<p>• Postgresql</p>
+						<p>• PostgreSQL</p>
 						<br />
 						<p>• Bash</p>
-						<p>• Powershell</p>
+						<p>• PowerShell</p>
 						<p>• Command Prompt</p>
 						<p>• Git</p>
 						<br />
@@ -158,7 +158,7 @@ export function HomePage() {
 						<p>• 🎹 Piano Diploma</p>
 						<p>• 🗄️ IT, Server Management</p>
 						<p>• 📐 Problem Solver</p>
-						<p>• 🎨 Learning designing / Colors</p>
+						<p>• 🎨 Learning design / colors</p>
 					</div>
 				</Paragraph1>
 				<Paragraph2>
