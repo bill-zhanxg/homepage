@@ -1,6 +1,7 @@
 import { motion } from 'motion/react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { BsBoxArrowUpRight } from 'react-icons/bs';
 
 export default function NavBarItem({
 	hideNavBar,
@@ -26,7 +27,12 @@ export default function NavBarItem({
 			{pathname === url ? (
 				<motion.div layoutId="nav-bar" className="w-full h-full absolute bg-primary rounded-lg" />
 			) : null}
-			<Link className="z-0 gap-0 text-lg inline" href={url} target={newTab ? '_blank' : undefined}>
+			<Link
+				className="z-0 gap-0 text-lg inline-flex items-center"
+				href={url}
+				target={newTab ? '_blank' : undefined}
+				rel={newTab ? 'noopener noreferrer' : undefined}
+			>
 				{text.split('').map((char, index) => (
 					<motion.span
 						key={index}
@@ -42,6 +48,7 @@ export default function NavBarItem({
 						{char === ' ' ? '\u00A0' : char}
 					</motion.span>
 				))}
+				{newTab ? <BsBoxArrowUpRight className="h-3.5 w-3.5 inline ml-2" aria-hidden="true" /> : null}
 			</Link>
 		</motion.li>
 	);
