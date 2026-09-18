@@ -1,13 +1,16 @@
+import './globals.css';
+
+import { Sen } from 'next/font/google';
+import Script from 'next/script';
+
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
-import type { Metadata, Viewport } from 'next';
-import { Sen } from 'next/font/google';
+
 import Dog from '../images/dog.jpg';
 import BarOfProgress from './components/BarOfProgress';
 import { Layout } from './components/Layout';
 
-import './globals.css';
-
+import type { Metadata, Viewport } from 'next';
 const sen = Sen({
 	subsets: ['latin'],
 	weight: ['400'],
@@ -44,6 +47,101 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
 	return (
 		<html lang="en" className={sen.variable}>
+			<head>
+				<Script
+					id="discord:component-embed"
+					type="application/json"
+					dangerouslySetInnerHTML={{
+						__html: {
+							component: {
+								type: 17,
+								accent_color: 10427897,
+								spoiler: false,
+								components: [
+									{
+										type: 9,
+										components: [
+											{
+												type: 10,
+												content:
+													'# **Bill.IHCha**\nFull stack developer, Discord bot developer, App developer, Minecraft Plugin & Mod developer, Game developer, Server developer. I am known online as Bill.IHCha, Bill.zhanxg, Bill-zhanxg. People usually just call me Bill.',
+											},
+										],
+										accessory: {
+											type: 11,
+											media: {
+												url: Dog.src,
+											},
+										},
+									},
+									{ type: 10, content: 'Go and visit the Homepage!' },
+									{
+										type: 1,
+										components: [
+											{
+												type: 2,
+												style: 5,
+												url: 'https://bill-zhanxg.com/',
+												label: 'Home Page',
+												emoji: { name: '🏠' },
+											},
+											{
+												type: 2,
+												style: 5,
+												url: 'https://bill-zhanxg.com/contact',
+												label: 'Contact',
+												emoji: { name: '📬' },
+											},
+											{
+												type: 2,
+												style: 5,
+												url: 'https://bill-zhanxg.com/projects',
+												label: 'My Projects',
+												emoji: { name: '🚀' },
+											},
+											{
+												type: 2,
+												style: 5,
+												url: 'https://bill-zhanxg.com/projects',
+												label: 'Cool Stuff',
+												emoji: { name: '😎' },
+											},
+											{
+												type: 2,
+												style: 5,
+												url: 'https://bill-zhanxg.com/projects',
+												label: 'Discord',
+												emoji: { name: '💬' },
+											},
+											{
+												type: 2,
+												style: 5,
+												url: 'https://bill-zhanxg.com/projects',
+												label: 'Donation',
+												emoji: { name: '☕' },
+											},
+											{
+												type: 2,
+												style: 5,
+												url: 'https://bill-zhanxg.com/projects',
+												label: 'Blog',
+												emoji: { name: '✍️' },
+											},
+											{
+												type: 2,
+												style: 5,
+												url: 'https://bill-zhanxg.com/projects',
+												label: 'Website Status',
+												emoji: { name: '🟢' },
+											},
+										],
+									},
+								],
+							},
+						},
+					}}
+				/>
+			</head>
 			<body>
 				<Layout>{children}</Layout>
 
