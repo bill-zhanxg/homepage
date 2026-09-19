@@ -69,11 +69,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 										accessory: {
 											type: 11,
 											media: {
-												url: Dog.src,
+												url: metadata.metadataBase?.toString() + Dog.src,
 											},
 										},
 									},
-									{ type: 10, content: 'Go and visit the Homepage!' },
+									{ type: 14 },
 									{
 										type: 1,
 										components: [
@@ -101,35 +101,35 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 											{
 												type: 2,
 												style: 5,
-												url: 'https://bill-zhanxg.com/projects',
+												url: 'https://bill-zhanxg.com/cool',
 												label: 'Cool Stuff',
 												emoji: { name: '😎' },
 											},
 											{
 												type: 2,
 												style: 5,
-												url: 'https://bill-zhanxg.com/projects',
+												url: 'https://bill-zhanxg.com/discord',
 												label: 'Discord',
 												emoji: { name: '💬' },
 											},
 											{
 												type: 2,
 												style: 5,
-												url: 'https://bill-zhanxg.com/projects',
+												url: 'https://bill-zhanxg.com/donation',
 												label: 'Donation',
 												emoji: { name: '☕' },
 											},
 											{
 												type: 2,
 												style: 5,
-												url: 'https://bill-zhanxg.com/projects',
+												url: 'https://blog.bill-zhanxg.com/',
 												label: 'Blog',
 												emoji: { name: '✍️' },
 											},
 											{
 												type: 2,
 												style: 5,
-												url: 'https://bill-zhanxg.com/projects',
+												url: 'https://stats.uptimerobot.com/2lnqqFKpD9',
 												label: 'Website Status',
 												emoji: { name: '🟢' },
 											},
