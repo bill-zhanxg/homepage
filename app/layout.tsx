@@ -51,7 +51,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 					id="discord:component-embed"
 					type="application/json"
 					dangerouslySetInnerHTML={{
-						__html: {
+						__html: JSON.stringify({
 							component: {
 								type: 17,
 								accent_color: 10427897,
@@ -137,7 +137,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 									},
 								],
 							},
-						},
+						}),
 					}}
 				/>
 			</head>
