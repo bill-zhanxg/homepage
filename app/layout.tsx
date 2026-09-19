@@ -105,6 +105,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 												label: 'Cool Stuff',
 												emoji: { name: '😎' },
 											},
+										],
+									},
+									{
+										type: 1,
+										components: [
 											{
 												type: 2,
 												style: 5,
@@ -112,11 +117,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 												label: 'Discord',
 												emoji: { name: '💬' },
 											},
-										],
-									},
-									{
-										type: 1,
-										components: [
 											{
 												type: 2,
 												style: 5,
